@@ -15,10 +15,23 @@
     <style>
         .butt {
             background-color: burlywood;
-            width: 10%;
-            height: 7%;
+            display: inline-block;
+            /* height: 7%; */
+            padding: 10px;
+            margin: 10px;
             border-radius: 5px;
             box-shadow: 3px 3px 3px 3px;
+        }
+
+        .bubble {
+            display: inline-block;
+            background-color: grey;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px 3px;
+            padding-left: 10px;
+            padding: 10px;
+            margin: 10px;
+            overflow-x: hidden;
         }
     </style>
 
@@ -84,20 +97,18 @@
     </div>
   </div>
 
-  <form onsubmit="submitText()" class="mb-4">
-    <div class="form-group">
-      <label for="msg"><h3>Add a sticky note!</h3></label>
-      
-      <textarea class="form-control" id="msg" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-secondary mb-2">Submit</button>
-  </form>
+  <label for="name">Username:</label>
+  <input type="text" id="name">
+  <br>
 
-
-
+  <label for="msg">Message:</label>
+  <input type="text" id="msg" size = 40>
+  
   <div class = "butt">
-      AHHH
+      SEND
   </div>
+  <br>
+
 
   <div id = "chat">
 
@@ -107,7 +118,6 @@
 <script>
 
     var noteList = new Map();
-    var uid = Date.now() % 10000;
 
     var socket = new WebSocket(
         'ws://' + window.location.host + '/ws/fittingroom');
@@ -115,6 +125,7 @@
     function submitText() {
         var text = {
             "type": "text",
+            "uid": document.getElementById("name").value,
             "text": document.getElementById("msg").value
         };
         socket.send(JSON.stringify(text));
@@ -130,10 +141,13 @@
         if (received.type == "text") {
             var bubble = document.createElement("div");
             bubble.classList.add("bubble");
-            var message = document.createTextNode(received.text);
+            var message = document.createTextNode(received.uid +  ": " + received.text);
+            
+            
             bubble.appendChild(message);
             var element = document.getElementById("chat");
             element.appendChild(bubble);
+            element.appendChild(document.createElement("br"));
         }
     }
     
@@ -142,7 +156,20 @@
     };
 
     $( ".butt" ).click(function() {
-        submitText();
+        if (!document.getElementById('msg').value == "") {
+            submitText();
+            document.getElementById('msg').value = "";
+        }
+        
+    });
+
+    $( "#msg" ).keypress(function(event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13' && !document.getElementById('msg').value == ""){
+            submitText();
+            document.getElementById('msg').value = "";
+        }
+        
     });
 
 
