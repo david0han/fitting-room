@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
+    </head>
+    <body>
+        <div id="title" class="container-flex">
+            <h1>Fitting Room</h1>
+            <h2>Choose your aesthetic</h2>
+        </div>
+
+      <div class="container-flex"></div>
+        <div class = "row navBar">
+            <div class ="col-3 navButton selectedNav">
+                <p>HOME</p>
+                <img src= "{% static 'images/house.svg' %}">
+            </div>
+            <div class = "col-3 navButton">
+                <p>OUTFIT</p>
+                <img src= "{% static 'images/hanger.svg' %}">
+            </div>
+            <div class = "col-3 navButton">
+                <p>ROOM</p>
+                <img src= "{% static 'images/curtain.svg' %}">
+            </div>
+            <div class = "col-3 navButton">
+                <p>RESOURCES</p>
+                <img src= "{% static 'images/leaf.svg' %}">
+            </div>
+        </div>
+      </div>
+    </body>
+</html>

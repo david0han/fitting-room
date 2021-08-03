@@ -1,75 +1,77 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Yeseva+One&display=swap');
 
-.caveat {
-  font-family: Caveat;
-}
+/* html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+} */
 
-.lato {
-  font-family: Lato;
-}
 
-.title {
-  font-size: 6em;
-}
+body {
+  background-color: #EAE5E1;
 
-.cyan {
-  background-color: #7afcff;
-}
-
-.pink {
-  background-color: #ff65a3;
 }
 
-.yellow {
-  background-color: #feff9c;
-}
-
-.sticky-note {
-  min-height: 13vw;
-  width: 13vw;
-  background-color: #fff740;
-  padding: 1vw;
-  display: inline-flex;
-  margin: 0.3vw;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 2em;
-  font-family: Caveat;
-}
-
-form {
-  margin: 0 auto;
-  padding: 1em;
-  border: 1px solid #CCC;
-  border-radius: 1em;
-  box-shadow: 5px 5px 5px 5px;
-  background-color: beige;
-}
-label {
-  display: inline-block;
-}
-.formelem {
-  text-align: center;
-}
-textarea {
-  vertical-align: top;
-  width: 50%;
-  /* height: 30%; */
-}
-
-input:focus,
-textarea:focus {
-  /* Additional highlight for focused elements */
-  border-color: #000;
+h1 {
+  font-family: 'Yeseva One', cursive;
+  font-size: 100px;
+  color: #9F898E;
 }
 
 h2 {
-  font-size: 2.5em;
+  font-family: 'Yeseva One', cursive;
+  font-size: 48px;
+  color: #9F898E;
 }
 
-.cork {
-  background-image: url('/static/images/cork-board.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
+p {
+  font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  color: #EAE5E1;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 25%;
+}
+
+
+
+.navBar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+}
+
+.navButton {
+  background-color: #9CA181;
+}
+
+.navButton p {
+  /* margin-top: 15px; */
+  margin-bottom: 0px;
+}
+
+.navButton img {
+  padding-bottom: 15px;
+}
+
+.selectedNav {
+  background-color: #535446;
+}
+
+.curtain {
+  background-color: #995C40;
+
+}
+
+.dropdown {
+
 }
