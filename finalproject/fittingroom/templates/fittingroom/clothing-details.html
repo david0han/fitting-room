@@ -9,9 +9,17 @@
 
 
     <body>
-      <div id="title" class="container-flex">
-        <h1>Fitting Room</h1>
-        <h2>Choose your aesthetic</h2>
+      <div id="main-content" class="d-flex flex-column">
+        <div id="title-box" class="d-flex flex-column">
+          <h1>Fitting Room</h1>
+        </div>
+        <div id="drop-flex" class="d-flex flex-column">
+          <h2>Choose your aesthetic</h2>
+          <div class="dropdown">
+            <img src= "{% static 'images/down-arrow.svg' %}">
+          </div>
+        </div>
       </div>
+
     </body>
 </html>

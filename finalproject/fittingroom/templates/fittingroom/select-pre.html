@@ -9,13 +9,20 @@
 
 
     <body>
-      <div id="title" class="container-flex">
-        <h1>Fitting Room</h1>
-        <h2>Choose your aesthetic</h2>
+      <div id="main-content" class="d-flex flex-column">
+        <div id="title-box" class="d-flex flex-column">
+          <h1>Fitting Room</h1>
+        </div>
+        <div id="drop-flex" class="d-flex flex-column">
+          <h2>Choose your aesthetic</h2>
+          <div class="dropdown">
+            <img src= "{% static 'images/down-arrow.svg' %}">
+          </div>
+        </div>
       </div>
 
-      <div class="container-flex"></div>
-        <div class = "row navBar">
+      <div class="container-flex">
+        <div class = "d-flex flex-row navBar">
           <div class ="col-3 navButton selectedNav">
             <p>HOME</p>
             <img src= "{% static 'images/house.svg' %}">
@@ -34,5 +41,6 @@
           </div>
         </div>
       </div>
+
     </body>
 </html>

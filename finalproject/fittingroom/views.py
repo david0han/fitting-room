@@ -19,3 +19,6 @@ def select_custom(request):
 def select_pre(request):
     return render(request, 'fittingroom/select-pre.html')
 
+def clothing_details(request):
+    return render(request, 'fittingroom/clothing-details.html')
+

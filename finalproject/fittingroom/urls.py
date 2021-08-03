@@ -9,4 +9,5 @@ urlpatterns = [
     path('room', views.room, name='room'),
     path('select-custom', views.select_custom, name='select_custom'),
     path('select-pre', views.select_pre, name='select_pre'),
+    path('clothing-details', views.clothing_details, name='clothing_details'),
 ]
