@@ -73,8 +73,58 @@
       </div>
     </div>
   </div>
+
+  <form onsubmit="submitText()" class="mb-4">
+    <div class="form-group">
+      <label for="msg"><h3>Add a sticky note!</h3></label>
+      
+      <textarea class="form-control" id="msg" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-secondary mb-2">Submit</button>
+  </form>
+
+  <div id = "chat">
+
+  </div>
+
 </body>
 <script>
+    var noteList = new Map();
+    var uid = Date.now() % 10000;
+
+    var socket = new WebSocket(
+        'ws://' + window.location.host + '/ws/fittingroom/?');
+
+    function submitText() {
+        var text = {
+            "type": "text",
+            "text": document.getElementById("msg").value,
+            "option": document.getElementById("textOption").value
+        };
+        socket.send(JSON.stringify(text));
+    }
+
+    socket.onmessage = function(receivedMessage) {
+        console.log(receivedMessage)
+        var received = JSON.parse(receivedMessage.data);
+        
+        console.log(received);
+        console.log("socket receiving");
+
+        if (received.type == "text") {
+            var sticky_note = document.createElement("div");
+            sticky_note.classList.add("sticky-note");
+            var message = document.createTextNode(received.text);
+            sticky_note.appendChild(message);
+            var element= document.getElementById("id");
+            element.appendChild(sticky_note);
+        }
+    }
+    
+    socket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
 
 </script>
 </html>
