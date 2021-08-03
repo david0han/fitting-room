@@ -12,6 +12,16 @@
     <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'fittingroom/vendor/paper/paper-full.min.js' %}"></script>
 
+    <style>
+        .butt {
+            background-color: burlywood;
+            width: 10%;
+            height: 7%;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px 3px;
+        }
+    </style>
+
 </head>
 <body class="bg-transparent">
   <div class="my-5 p-0 text-center border border-dark rounded cyan">
@@ -83,23 +93,29 @@
     <button type="submit" class="btn btn-secondary mb-2">Submit</button>
   </form>
 
+
+
+  <div class = "butt">
+      AHHH
+  </div>
+
   <div id = "chat">
 
   </div>
 
 </body>
 <script>
+
     var noteList = new Map();
     var uid = Date.now() % 10000;
 
     var socket = new WebSocket(
-        'ws://' + window.location.host + '/ws/fittingroom/?');
+        'ws://' + window.location.host + '/ws/fittingroom');
 
     function submitText() {
         var text = {
             "type": "text",
-            "text": document.getElementById("msg").value,
-            "option": document.getElementById("textOption").value
+            "text": document.getElementById("msg").value
         };
         socket.send(JSON.stringify(text));
     }
@@ -112,12 +128,12 @@
         console.log("socket receiving");
 
         if (received.type == "text") {
-            var sticky_note = document.createElement("div");
-            sticky_note.classList.add("sticky-note");
+            var bubble = document.createElement("div");
+            bubble.classList.add("bubble");
             var message = document.createTextNode(received.text);
-            sticky_note.appendChild(message);
-            var element= document.getElementById("id");
-            element.appendChild(sticky_note);
+            bubble.appendChild(message);
+            var element = document.getElementById("chat");
+            element.appendChild(bubble);
         }
     }
     
@@ -125,6 +141,12 @@
         console.error('Chat socket closed unexpectedly');
     };
 
+    $( ".butt" ).click(function() {
+        submitText();
+    });
+
 
 </script>
 </html>
+
+
