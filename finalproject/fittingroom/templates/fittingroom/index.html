@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="mx-5 mb-0 cork">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>P4 Drawing</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
+
+    <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fittingroom/vendor/paper/paper-full.min.js' %}"></script>
+
+</head>
+<body class="bg-transparent">
+  <div class="my-5 p-0 text-center border border-dark rounded cyan">
+    <h1 class="title lato">Berkeley Farmers' Market</h1>
+    <h4>Community Bulletin Board</h4>
+  </div>
+
+  <div class="container-flex">
+    <div class="row">
+      <div class="col">
+        <h2 class="py-5 text-center border border-dark rounded caveat yellow">Recommendations!</h2>
+
+          <!-- <div class="container-flex">
+            <div class="row no-gutters">
+              <div class="col flex-column" id=first>
+                <div class="sticky-note">OK</div>
+                <div class="sticky-note">i kinda went sicko mode</div>
+                <div class="sticky-note">sorry</div>
+                <div class="sticky-note">that mb</div>
+              </div>
+            </div>
+          </div> -->
+          <div id="first">
+            <div class="sticky-note">Wow, definitely check out this year's strawberries!</div>
+            <!-- <div class="sticky-note">i kinda went sicko mode</div>
+            <div class="sticky-note">sorry</div> -->
+          </div>
+
+      </div>
+      <div class="col">
+        <h2 class="py-5 text-center border border-dark rounded caveat pink">How was your experience?</h2>
+
+        <div class="container-flex">
+          <div class="row no-gutters">
+            <div class="col flex-column" id=second>
+              <!-- <div class="sticky-note">but hey</div>
+              <div class="sticky-note">it works</div>
+              <div class="sticky-note">it looks ok</div>
+              <div class="sticky-note">no?</div> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col">
+        <h2 class="py-5 text-center border border-dark rounded caveat bg-warning">Anything you want!</h2>
+
+        <div class="container-flex">
+          <div class="row no-gutters">
+            <div class="col flex-column" id=third>
+              <!-- <div class="sticky-note">i know</div>
+              <div class="sticky-note">the amount of bootstrap</div>
+              <div class="sticky-note">hard to read</div>
+              <div class="sticky-note">just msg me</div> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+</script>
+</html>

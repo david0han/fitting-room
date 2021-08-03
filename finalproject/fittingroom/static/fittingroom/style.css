@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Lato&display=swap");
+
+.caveat {
+  font-family: Caveat;
+}
+
+.lato {
+  font-family: Lato;
+}
+
+.title {
+  font-size: 6em;
+}
+
+.cyan {
+  background-color: #7afcff;
+}
+
+.pink {
+  background-color: #ff65a3;
+}
+
+.yellow {
+  background-color: #feff9c;
+}
+
+.sticky-note {
+  min-height: 13vw;
+  width: 13vw;
+  background-color: #fff740;
+  padding: 1vw;
+  display: inline-flex;
+  margin: 0.3vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 2em;
+  font-family: Caveat;
+}
+
+form {
+  margin: 0 auto;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  box-shadow: 5px 5px 5px 5px;
+  background-color: beige;
+}
+label {
+  display: inline-block;
+}
+.formelem {
+  text-align: center;
+}
+textarea {
+  vertical-align: top;
+  width: 50%;
+  /* height: 30%; */
+}
+
+input:focus,
+textarea:focus {
+  /* Additional highlight for focused elements */
+  border-color: #000;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+.cork {
+  background-image: url('/static/images/cork-board.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
