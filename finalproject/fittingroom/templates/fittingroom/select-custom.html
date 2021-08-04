@@ -10,7 +10,69 @@
 
     <body>
       <div id="main-content" class="d-flex flex-column">
-        
+        <div id ="dropdownn"><d
+iv id="drop-flex" class="d-flex flex-column">
+          <h2>Choose more pieces</h2>
+          <div id="menu" class="cover dropdown d-flex flex-column">
+            
+            <div class="icons">
+              <img src= "{% static 'images/down-arrow.svg' %}" onClick="toggleStyles()">
+            </div>
+            <div id="options" class="style-content hidden d-flex flex-row">
+              <div class="checklist-holder">
+                <label class="container">
+                  <p>Hat</p>
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <p>Glasses</p>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <p>Bracelet</p>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <p>Outer Layer</p>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <p>Dress</p>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <p>Shirt</p>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <p>Pants</p>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">
+                  <p>Footware</p>
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="palette-holder">
+                <!-- palettes -->
+                <li>this is filler text</li>
+                <li>this is filler text</li>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+        <a class="btn finButton" href="room" role="button">
+            Finish!
+        </a>   
       </div>
 
       <div class="container-flex">
@@ -34,5 +96,6 @@
         </div>
       </div>
 
+      <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
     </body>
 </html>
