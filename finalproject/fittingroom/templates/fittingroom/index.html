@@ -30,7 +30,7 @@
             box-shadow: 3px 3px 3px 3px;
             padding-left: 10px;
             padding: 10px;
-            margin: 10px;
+            margin: 3px;
             overflow-x: hidden;
         }
     </style>
@@ -116,9 +116,7 @@
 
 </body>
 <script>
-
-    var noteList = new Map();
-
+    
     var socket = new WebSocket(
         'ws://' + window.location.host + '/ws/fittingroom');
 
@@ -128,12 +126,17 @@
             "uid": document.getElementById("name").value,
             "text": document.getElementById("msg").value
         };
+        
         socket.send(JSON.stringify(text));
     }
 
     socket.onmessage = function(receivedMessage) {
         console.log(receivedMessage)
         var received = JSON.parse(receivedMessage.data);
+
+        // if (first person and new card) {
+        //     socket.send(card= false);
+        // }
         
         console.log(received);
         console.log("socket receiving");
