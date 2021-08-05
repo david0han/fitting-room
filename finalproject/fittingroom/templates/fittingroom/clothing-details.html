@@ -24,9 +24,9 @@
         </div>
       </div>
 
-      <div class="btn finButton">
+      <a href="/fittingroom/room" class="btn finButton">
         Share!
-      </div>
+      </a>
 
     </body>
     <script>
@@ -48,10 +48,13 @@
           var card = {
               "type": "card",
               "uid": uid,
-              "clothes": clothes
+              "clothes": clothes,
+              "newCard": true
           };
           socket.send(JSON.stringify(card));
+         
       }
+
 
       $( ".btn.finButton" ).click(function() {
         submitCard();

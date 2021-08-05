@@ -10,8 +10,7 @@
 
 
     <body>
-      <div id="main-content" class="d-flex flex-column">
-        
+      <div id="main-content" class="d-flex flex-column users">
       </div>
 
       <div class="container-flex">
@@ -37,6 +36,9 @@
 
     </body>
     <script>
+
+      var cards = [];
+      var uids = [];
       
       // if (newcard == true) {
       //   socket.send(newcard=false);
@@ -60,26 +62,79 @@
         socket.send(JSON.stringify(text));
     }
 
+    $( document ).ready(function() {
+        var clothes = {
+            "hat": "sun hat",
+            "top": "dress",
+            "bottom": "",
+            "shoes": "heels"
+        };
+        var card = {
+            "type": "card",
+            "uid": "",
+            "clothes": clothes,
+            "newCard": false
+        };
+        socket.onopen = () => socket.send(JSON.stringify(card));
+    });
+
     socket.onmessage = function(receivedMessage) {
-        console.log(receivedMessage)
+        // console.log(receivedMessage);
         var received = JSON.parse(receivedMessage.data);
-
-        
-
         console.log(received);
         console.log("socket receiving");
 
-        if (received.type == "text") {
-            var bubble = document.createElement("div");
-            bubble.classList.add("bubble");
-            var message = document.createTextNode(received.uid +  ": " + received.text);
-            
-            
-            bubble.appendChild(message);
-            var element = document.getElementById("chat");
-            element.appendChild(bubble);
-            element.appendChild(document.createElement("br"));
+        if (received.type == "card") {
+          cards.push(received);
+          if (received.newCard) {
+            var clothes = {
+                "hat": "sun hat",
+                "top": "dress",
+                "bottom": "",
+                "shoes": "heels"
+            };
+            var card = {
+                "type": "card",
+                "uid": cards[0].uid,
+                "clothes": clothes,
+                "newCard": false
+            };
+            socket.send(JSON.stringify(card));
+          }
+          
+          if (!uids.includes(received.uid)) {
+            console.log("YES");
+            $(".users").append(received.clothes.hat);
+            uids.push(received.uid);
+          }
+        // $(".users").append('<div>cards[cards.length].clothes.hat</div>')
+        // for (var i = 0; i < cards.length; i++) {
+        //   if (cards[i].uid = received.uid) {
+        //     var hat = cards[i].clothes.hat
+        //     $(".users").append(hat);
+        //   }
+
+        // }
         }
+        
+        
+
+        
+
+        // console.log(received);
+        // console.log("socket receiving");
+
+        // if (received.type == "text") {
+        //     var bubble = document.createElement("div");
+        //     bubble.classList.add("bubble");
+        //     var message = document.createTextNode(received.uid +  ": " + received.text);
+            
+            
+        //     bubble.appendChild(message);
+        //     var element = document.getElementById("chat");
+        //     element.appendChild(bubble);
+        //     element.appendChild(document.createElement("br"));
+        // }
     }
     
     socket.onclose = function(e) {
