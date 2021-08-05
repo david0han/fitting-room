@@ -18,24 +18,28 @@
 
 }
 
+.palette-selected {
+  background-color: #CCAE9A;
+}
+
 /* Palette Colors */
 
-#p-c1 {
+#p1-c1 {
   background: #2B2D42;
 }
 
-#p-c2 {
+#p1-c2 {
   background: #8D99AE;
 }
 
-#p-c3 {
+#p1-c3 {
   background: #EDF2F4;
 }
 
-#p-c4 {
+#p1-c4 {
   background: #EF233C;
 }
 
-#p-c5 {
+#p1-c5 {
   background: #D90429;
 }

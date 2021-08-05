@@ -4,9 +4,22 @@ function toggleStyles() {
 
     menuBox.classList.toggle('cover');
     styleOPtions.classList.toggle('hidden');
+}
 
-    // bucketBox.children[1].classList.toggle('invisible');    
+function selectColorPalette(paletteName) {
+    var palette = document.getElementById(paletteName);
+    // palette.style.backgroundColor = "#CCAE9A";
+    onePaletteOnly();
+    palette.classList.toggle('palette-selected');
+}
 
-    // bucketBox.classList.toggle('closed');
-    // bucketBox.classList.toggle('open');
+function onePaletteOnly() {
+    var allColorThemes = document.querySelector(".palette-holder");
+
+    for (var i = 0; i < allColorThemes.length; i++) {
+        var currColorTheme = allColorThemes[i];
+        if (currColorTheme.classList.contains('palette-selected')) {
+            currColorTheme.classList.toggle('palette-selected');
+        }
+    }
 }
