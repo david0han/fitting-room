@@ -5,6 +5,7 @@
     <head>
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
+      <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
     </head>
 
 
@@ -35,4 +36,54 @@
       </div>
 
     </body>
+    <script>
+      
+      // if (newcard == true) {
+      //   socket.send(newcard=false);
+      // }
+      // if (received.type == "card") {
+      //   if (received.uid is not in uidlist) {
+      //     addcard();
+      //   }
+      // }
+
+      var socket = new WebSocket(
+        'ws://' + window.location.host + '/ws/fittingroom');
+
+    function submitText() {
+        var text = {
+            "type": "text",
+            "uid": document.getElementById("name").value,
+            "text": document.getElementById("msg").value
+        };
+        
+        socket.send(JSON.stringify(text));
+    }
+
+    socket.onmessage = function(receivedMessage) {
+        console.log(receivedMessage)
+        var received = JSON.parse(receivedMessage.data);
+
+        
+
+        console.log(received);
+        console.log("socket receiving");
+
+        if (received.type == "text") {
+            var bubble = document.createElement("div");
+            bubble.classList.add("bubble");
+            var message = document.createTextNode(received.uid +  ": " + received.text);
+            
+            
+            bubble.appendChild(message);
+            var element = document.getElementById("chat");
+            element.appendChild(bubble);
+            element.appendChild(document.createElement("br"));
+        }
+    }
+    
+    socket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+    </script>
 </html>
