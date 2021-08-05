@@ -5,6 +5,9 @@
     <head>
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
+      
+	    <script src="{% static '/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	    <script src="{% static '/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
     </head>
 
 
@@ -103,11 +106,14 @@ iv id="drop-flex" class="d-flex flex-column">
           </div>
           </div>
         </div>
-      </div>
+        <div class="headbox" onClick="clothingClicked()"> <img class="test" id="hat" src="{% static 'images/hat.png' %}" > </div>
+
+      
         <a class="btn finButton" href="room" role="button">
             Finish!
         </a>   
       </div>
+    
 
       <div class="container-flex">
         <div class = "d-flex flex-row navBar">
@@ -131,5 +137,24 @@ iv id="drop-flex" class="d-flex flex-column">
       </div>
 
       <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
+      <script language = "javascript">
+        function clothingClicked() {
+          document.getElementById("hat").src = "{% static 'images/fandora.jpeg' %}";
+        }
+        
+      </script>
+
+      <style>
+
+        .headbox img {
+          width: 70%;
+        }
+
+        .test {
+          width: 20% !important;
+        }
+
+      </style>
     </body>
+    
 </html>
