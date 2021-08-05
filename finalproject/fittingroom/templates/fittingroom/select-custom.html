@@ -9,6 +9,40 @@
 
 
     <body>
+      <div id="menu" class="cover dropdown d-flex flex-column">
+        <div class="icons">
+          <img src= "{% static 'images/down-arrow.svg' %}" onClick="toggleStyles()">
+        </div>
+        <div id="options" class="style-content hidden d-flex flex-row">
+          <div class="checklist-holder">
+            <label class="container">
+              <p>Hats</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">
+              <p>Earpieces</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">
+              <p>Neckpieces</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">
+              <p>Handpieces</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">
+              <p>Dresses</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
       <div id="main-content" class="d-flex flex-column">
         
       </div>
@@ -34,5 +68,6 @@
         </div>
       </div>
 
+      <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
     </body>
 </html>
