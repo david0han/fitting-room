@@ -7,37 +7,59 @@
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
     </head>
 
+    <style>
+      .title{
+        background-color: #D0B5A3;
+        color: #EAE5E1;
+        height: 50 px;
+        width: 100 px;
+        font-family: Roboto;
+        font-style: Bold;
+        font-size: 25px;
+        text-align: center;
+
+      }
+    </style>
 
     <body>
-      <div id="main-content" class="d-flex flex-column">
-        <div id="title-box" class="d-flex flex-column">
-          <h1>Fitting Room</h1>
-        </div>
-        <div id="drop-flex" class="d-flex flex-column">
-          <h2>Choose your aesthetic</h2>
-          <div class="dropdown">
-            <img src= "{% static 'images/down-arrow.svg' %}">
+      <div id="resources-content" class="container">
+        <div id="resources-titles" class="row">
+          <div class = "title flex-column">Recommended Brands
+              <div> Brand1</div>
+              <div> Brand2</div>
           </div>
-        </div>
+          <div class = "title flex-column"> Recommended Products
+              <div> Product1</div>
+              <div> Product2</div>
+          </div>
+          <div class = "title column"> Learn More About Fashion
+             <div> Learn1</div>
+          ` <div> Learn2</div>
+          </div>
+       </div>
       </div>
+       
+       
 
       <div class="container-flex">
         <div class = "d-flex flex-row navBar">
-          <div class ="col-3 navButton selectedNav">
-            <p>HOME</p>
-            <img src= "{% static 'images/house.svg' %}">
-          </div>
-          <div class = "col-3 navButton">
+          <div class = "col-4 navButton selectedNav">
+            <a href =  "/fittingroom/main">
             <p>OUTFIT</p>
             <img src= "{% static 'images/hanger.svg' %}">
+            </a>
           </div>
-          <div class = "col-3 navButton">
+          <div class = "col-4 navButton">
+            <a href = "/fittingroom/room">
             <p>ROOM</p>
             <img src= "{% static 'images/curtain.svg' %}">
+            </a>
           </div>
-          <div class = "col-3 navButton">
+          <div class = "col-4 navButton">
+            <a href = "/fittingroom/resources">
             <p>RESOURCES</p>
             <img src= "{% static 'images/leaf.svg' %}">
+            </a>
           </div>
         </div>
       </div>
