@@ -24,8 +24,8 @@
         </div>
       </div>
 
-      <label for="article">Clothing Article:</label>
-      <input type="text" id="article">
+      <label for="username">Name:</label>
+      <input type="text" id="username">
       <img id = "hat" src="{% static 'images/hat.png' %}">
       <a href="/fittingroom/room" class="btn finButton">
         Share!
@@ -38,7 +38,7 @@
       var socket = new WebSocket(
         'ws://' + window.location.host + '/ws/fittingroom');
 
-      var uid = Date.now() % 10000;
+      // var uid = Date.now() % 10000;
 
       function submitCard() {
           var clothes = {
@@ -47,7 +47,7 @@
 
           var card = {
               "type": "card",
-              "uid": document.getElementById("article").value,
+              "uid": document.getElementById("username").value,
               "clothes": clothes,
               "newCard": true
           };

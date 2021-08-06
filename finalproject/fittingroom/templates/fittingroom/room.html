@@ -6,12 +6,105 @@
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
       <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+
+      <style>
+        .butt {
+          background-color: #D0B5A3;
+          color: white;
+          text-align: center;
+          padding: 10px;
+          margin: 10px;
+          border-radius: 5px;
+          width: 20%;
+          box-shadow: 3px 3px 3px 3px;
+        }
+
+        .bubble {
+          display: inline-block;
+          background-color: #D0B5A3;
+          color: white; 
+          border-radius: 5px;
+          padding-left: 10px;
+          padding: 10px;
+          margin-top: 3px;
+          margin-bottom: 3px;
+          margin-left: 10px;
+          margin-right: 3px;
+          overflow-x: hidden;
+        }
+        
+        #chatbutt {
+          background-color: #D0B5A3;
+          text-align: center;
+          color: white;
+          height: 5%;
+          width: 24%;
+          font-size: 30px;
+          border-radius: 5px;
+          /* box-shadow: 3px -3px 3px 3px;  */
+          position: absolute;
+          padding-top: 6px;
+          right: 1%;
+          top: 2%;
+        } 
+
+        #chatbox {
+          position: absolute; 
+          padding: 1px;
+          margin-top: 30px;
+          border: 7px solid #D0B5A3; 
+          width: 25%;
+          height: 80%;
+          top: 7%;
+          right: 0;
+        }
+        #chat {
+          top: 0;
+          height:80%;
+          overflow-y: auto;
+          padding: 2%;
+        }
+
+        #chatinput {
+          padding: 2%;
+          position: absolute;
+          bottom: 80px;
+          width: 88%;
+          display: inline-flex;
+        }
+        #msg {
+          width: 80%;
+        }
+        #user {
+          margin: 2%;
+        }
+
+      </style>
     </head>
 
 
     <body>
       <div id="main-content" class="d-flex flex-column users">
+        <div id = "chatbutt">
+          Chat
+        </div>
       </div>
+      <div id = "chatbox">
+        <div id = "user">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
+        </div>
+        
+        <div id = "chat"></div>
+        <div id = "chatinput">
+          <input type="text" id="msg">
+          <div class = "butt">
+              SEND
+          </div>
+        </div>
+        
+      </div>
+      
 
       <div class="container-flex">
         <div class = "d-flex flex-row navBar">
@@ -39,6 +132,8 @@
 
       var cards = [];
       var uids = [];
+
+      var uid = "";
       
       // if (newcard == true) {
       //   socket.send(newcard=false);
@@ -65,15 +160,35 @@
         socket.onopen = () => socket.send(JSON.stringify(card));
     });
 
+    function submitText() {
+        var text = {
+            "type": "text",
+            "uid": document.getElementById("name").value,
+            "text": document.getElementById("msg").value
+        };
+        socket.send(JSON.stringify(text));
+    }
+
     socket.onmessage = function(receivedMessage) {
         // console.log(receivedMessage);
         var received = JSON.parse(receivedMessage.data);
         console.log(received);
         console.log("socket receiving");
         
-        
-
         if (received.type == "card") {
+
+          // if (uid == "") {
+          //   if (uids[0] != "") {
+          //     uid = uids[0];
+          //   }
+          //   if (received.uid != "") {
+          //     uid = received.uid;
+          //   }
+            
+          //   console.log("uid: " + uid);
+          // }
+          
+          
           if (!uids.includes(received.uid) && received.uid != "") {
             console.log("hat: " + received.clothes.hat);
 
@@ -88,6 +203,7 @@
           }
           
           if (received.newCard) {
+            
             cards.push(received);
             uids.push(received.uid);
             for (var i = 0; i < cards.length; i++) {
@@ -99,29 +215,66 @@
               };
               socket.send(JSON.stringify(card));
             }
-          }
-          
-          
+          } 
         }
-        
-        // console.log(received);
-        // console.log("socket receiving");
 
-        // if (received.type == "text") {
-        //     var bubble = document.createElement("div");
-        //     bubble.classList.add("bubble");
-        //     var message = document.createTextNode(received.uid +  ": " + received.text);
+        if (received.type == "text") {
+            var bubble = document.createElement("div");
+            bubble.classList.add("bubble");
+            // uid = document.getElementById("name").value;
+            var message = document.createTextNode(received.uid + ": " + received.text);
             
             
-        //     bubble.appendChild(message);
-        //     var element = document.getElementById("chat");
-        //     element.appendChild(bubble);
-        //     element.appendChild(document.createElement("br"));
-        // }
+            bubble.appendChild(message);
+            var element = document.getElementById("chat");
+            element.appendChild(bubble);
+            element.appendChild(document.createElement("br"));
+        }
     }
     
     socket.onclose = function(e) {
         console.error('Chat socket closed unexpectedly');
     };
+
+    $( ".butt" ).click(function() {
+        if (!document.getElementById('msg').value == "" && (document.getElementById('name').value != "" || $("#user").is(":hidden"))) {
+            submitText();
+            document.getElementById('msg').value = "";
+            if (!$("#user").is(":hidden")) {
+              $( "#user" ).hide("slow");
+            }
+        }
+        if (document.getElementById('name').value == "" && !$("#user").is(":hidden")) {
+          alert( "Please enter a name >:(" );
+        }
+    });
+
+    $( "#msg" ).keypress(function(event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+          if(!document.getElementById('msg').value == "" && (document.getElementById('name').value != "" || $("#user").is(":hidden"))){
+            submitText();
+            document.getElementById('msg').value = "";
+            if (!$("#user").is(":hidden")) {
+              $( "#user" ).hide("slow");
+            }
+          }
+          if (document.getElementById('name').value == "" && !$("#user").is(":hidden")) {
+          alert( "Please enter a name >:(" );
+        }
+        }
+        
+    });
+
+    $( "#chatbutt" ).click(function() {
+      $( "#chatbox" ).toggle( "slow", function() {
+        // Animation complete.
+      });
+    });
+
+    window.setInterval(function() {
+      var elem = document.getElementById('chat');
+      elem.scrollTop = elem.scrollHeight;
+    }, 100);
     </script>
 </html>
