@@ -243,22 +243,25 @@
 
       <div class="container-flex">
         <div class="d-flex flex-row navBar">
-          <div class ="col-3 navButton selectedNav">
-            <p>HOME</p>
-            <img src= "{% static 'images/house.svg' %}">
-          </div>
-          <div class = "col-3 navButton">
+          <div class = "col-4 navButton selectedNav">
+            <a href =  "/fittingroom/main">
             <p>OUTFIT</p>
             <img src= "{% static 'images/hanger.svg' %}">
+            </a>
           </div>
-          <div class = "col-3 navButton">
+          <div class = "col-4 navButton">
+            <a href = "/fittingroom/room">
             <p>ROOM</p>
             <img src= "{% static 'images/curtain.svg' %}">
+            </a>
           </div>
-          <div class = "col-3 navButton">
+          <div class = "col-4 navButton">
+            <a href = "/fittingroom/resources">
             <p>RESOURCES</p>
             <img src= "{% static 'images/leaf.svg' %}">
+            </a>
           </div>
+        </div>
         </div>
       </div>
 
