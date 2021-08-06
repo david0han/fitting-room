@@ -22,24 +22,276 @@
   background-color: #CCAE9A;
 }
 
+.submit-button {
+  border: 5px solid #995C40;
+  background-color: #995C40;
+  border-radius: 30px;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #EAE5E1;
+
+  /* padding-left: 30px;
+  padding-right: 30px; */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  left: 270px;
+  width: 200px;
+}
+
 /* Palette Colors */
 
+/* Palette 1: light-brown */
 #p1-c1 {
-  background: #2B2D42;
+  background: #EDE0D4;
 }
 
 #p1-c2 {
-  background: #8D99AE;
+  background: #E6CCB2;
 }
 
 #p1-c3 {
-  background: #EDF2F4;
+  background: #DDB892;
 }
 
 #p1-c4 {
-  background: #EF233C;
+  background: #B08968;
 }
 
 #p1-c5 {
+  background: #7F5539;
+}
+
+/* Palette 2: earthy */
+#p2-c1 {
+  background: #CCD5AE;
+}
+
+#p2-c2 {
+  background: #E9EDC9;
+}
+
+#p2-c3 {
+  background: #FEFAE0;
+}
+
+#p2-c4 {
+  background: #FAEDCD;
+}
+
+#p2-c5 {
+  background: #D4A373;
+}
+
+/* Palette 3: blue */
+#p3-c1 {
+  background: #03045E;
+}
+
+#p3-c2 {
+  background: #0077B6;
+}
+
+#p3-c3 {
+  background: #00B4D8;
+}
+
+#p3-c4 {
+  background: #90E0EF;
+}
+
+#p3-c5 {
+  background: #CAF0F8;
+}
+
+/* Palette 4: navy-blue */
+#p4-c1 {
+  background: #03054F;
+}
+
+#p4-c2 {
+  background: #02043B;
+}
+
+#p4-c3 {
+  background: #293241;
+}
+
+#p4-c4 {
+  background: #545B67;
+}
+
+#p4-c5 {
+  background: #343A40;
+}
+
+/* Palette 5: pastel */
+#p5-c1 {
+  background: #FAE1DD;
+}
+
+#p5-c2 {
+  background: #F8EDEB;
+}
+
+#p5-c3 {
+  background: #E8E8E4;
+}
+
+#p5-c4 {
+  background: #D8E2DC;
+}
+
+#p5-c5 {
+  background: #ECE4DB;
+}
+
+/* Palette 6: pink-blue */
+#p6-c1 {
+  background: #C0D2D8;
+}
+
+#p6-c2 {
+  background: #CAF0F8;
+}
+
+#p6-c3 {
+  background: #C8B3B5;
+}
+
+#p6-c4 {
+  background: #FFD6DC;
+}
+
+#p6-c5 {
+  background: #FAF9F8;
+}
+
+/* Palette 7: purple */
+#p7-c1 {
+  background: #9BA9FF;
+}
+
+#p7-c2 {
+  background: #B9B5FF;
+}
+
+#p7-c3 {
+  background: #D8C2FF;
+}
+
+#p7-c4 {
+  background: #ECCAFF;
+}
+
+#p7-c5 {
+  background: #F8F9FA;
+}
+
+/* Palette 8: green */
+#p8-c1 {
+  background: #FFFFFF;
+}
+
+#p8-c2 {
+  background: #99E2B4;
+}
+
+#p8-c3 {
+  background: #67B99A;
+}
+
+#p8-c4 {
+  background: #469D89;
+}
+
+#p8-c5 {
+  background: #14746F;
+}
+
+/* Palette 9: red-black */
+#p9-c1 {
+  background: #2B2D42;
+}
+
+#p9-c2 {
+  background: #8D99AE;
+}
+
+#p9-c3 {
+  background: #EDF2F4;
+}
+
+#p9-c4 {
+  background: #EF233C;
+}
+
+#p9-c5 {
   background: #D90429;
 }
+
+/* Palette 10: yellow-grey */
+#p10-c1 {
+  background: #3B3A40;
+}
+
+#p10-c2 {
+  background: #6C6F74;
+}
+
+#p10-c3 {
+  background: #C0B6AA;
+}
+
+#p10-c4 {
+  background: #F2D949;
+}
+
+#p10-c5 {
+  background: #EBB940;
+}
+
+/* Palette 11: neon */
+#p11-c1 {
+  background: #AFFC41;
+}
+
+#p11-c2 {
+  background: #FFFF3F;
+}
+
+#p11-c3 {
+  background: #FB8B24;
+}
+
+#p11-c4 {
+  background: #FF69EB;
+}
+
+#p11-c5 {
+  background: #C04CFD;
+}
+
+/* Palette 12: grayscale */
+#p12-c1 {
+  background: #F8F9FA;
+}
+
+#p12-c2 {
+  background: #DEE2E6;
+}
+
+#p12-c3 {
+  background: #ADB5BD;
+}
+
+#p12-c4 {
+  background: #495057;
+}
+
+#p12-c5 {
+  background: #212529;
+}
+

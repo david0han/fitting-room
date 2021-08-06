@@ -8,7 +8,6 @@
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/main-dropdown-style.css' %}" />
     </head>
 
-
     <body>
       <div id="main-content" class="d-flex flex-column">
         <div id="title-box" class="d-flex flex-column">
@@ -22,77 +21,216 @@
             </div>
             <div id="options" class="style-content hidden d-flex flex-row">
               <div class="checklist-holder">
-                <label class="container">
-                  <p>Academia</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>Athleisure</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>Cottagecore</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>E-Boy/E-Girl/E-Kid</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>Soft Boy/Soft Girl</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>Streetwear</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>Vintage</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <!-- extra -->
-                <label class="container">
-                  <p>smthsmth</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>smthsmth</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
+                <!-- <form action="select-pre" method="get"> -->
+                  
+                  <label class="container">
+                    <p>Academia</p>
+                    <input id="academia" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Artsy</p>
+                    <input id="artsy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Athleisure</p>
+                    <input id="athleisure" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Business Casual</p>
+                    <input  id="business-casual" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Casual</p>
+                    <input id="casual" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Chic</p>
+                    <input id="chic" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Classy</p>
+                    <input  id="classy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Cottagecore</p>
+                    <input id="cottagecore" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>E-Boy/E-Girl/E-Kid</p>
+                    <input id="e-kid" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Formal</p>
+                    <input id="formal" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Geeky Chic</p>
+                    <input id="geeky-chic" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Goth</p>
+                    <input id="goth" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Grunge</p>
+                    <input id="grunge" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Halloween</p>
+                    <input id="halloween" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Hipster</p>
+                    <input id="hipster" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Office Wear</p>
+                    <input id="office-wear" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Punk</p>
+                    <input id="punk" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Retro</p>
+                    <input id="retro" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Soft Boy/Soft Girl</p>
+                    <input id="soft" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Streetwear</p>
+                    <input id="streetwear" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Tomboy</p>
+                    <input id="tomboy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Vacation</p>
+                    <input id="vacation" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Vintage</p>
+                    <input id="vintage" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                <!-- </form> -->
               </div>
+
+
               <div class="palette-holder">
-                <div id="black-red" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                <div id="light-brown" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
                   <div id="p1-c1" class="circle"></div>
                   <div id="p1-c2" class="circle"></div>
                   <div id="p1-c3" class="circle"></div>
                   <div id="p1-c4" class="circle"></div>
                   <div id="p1-c5" class="circle"></div>
                 </div>
-                <div id="blue" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                <div id="earthy" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
                   <div id="p2-c1" class="circle"></div>
                   <div id="p2-c2" class="circle"></div>
                   <div id="p2-c3" class="circle"></div>
                   <div id="p2-c4" class="circle"></div>
                   <div id="p2-c5" class="circle"></div>
                 </div>
-                <div id="green" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                <div id="blue" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
                   <div id="p3-c1" class="circle"></div>
                   <div id="p3-c2" class="circle"></div>
                   <div id="p3-c3" class="circle"></div>
                   <div id="p3-c4" class="circle"></div>
                   <div id="p3-c5" class="circle"></div>
                 </div>
+                <div id="navy-blue" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p4-c1" class="circle"></div>
+                  <div id="p4-c2" class="circle"></div>
+                  <div id="p4-c3" class="circle"></div>
+                  <div id="p4-c4" class="circle"></div>
+                  <div id="p4-c5" class="circle"></div>
+                </div>
+                <div id="pastel" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p5-c1" class="circle"></div>
+                  <div id="p5-c2" class="circle"></div>
+                  <div id="p5-c3" class="circle"></div>
+                  <div id="p5-c4" class="circle"></div>
+                  <div id="p5-c5" class="circle"></div>
+                </div>
+                <div id="pink-blue" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p6-c1" class="circle"></div>
+                  <div id="p6-c2" class="circle"></div>
+                  <div id="p6-c3" class="circle"></div>
+                  <div id="p6-c4" class="circle"></div>
+                  <div id="p6-c5" class="circle"></div>
+                </div>
+                <div id="purple" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p7-c1" class="circle"></div>
+                  <div id="p7-c2" class="circle"></div>
+                  <div id="p7-c3" class="circle"></div>
+                  <div id="p7-c4" class="circle"></div>
+                  <div id="p7-c5" class="circle"></div>
+                </div>
+                <div id="green" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p8-c1" class="circle"></div>
+                  <div id="p8-c2" class="circle"></div>
+                  <div id="p8-c3" class="circle"></div>
+                  <div id="p8-c4" class="circle"></div>
+                  <div id="p8-c5" class="circle"></div>
+                </div>
+                <div id="red-black" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p9-c1" class="circle"></div>
+                  <div id="p9-c2" class="circle"></div>
+                  <div id="p9-c3" class="circle"></div>
+                  <div id="p9-c4" class="circle"></div>
+                  <div id="p9-c5" class="circle"></div>
+                </div>
+                <div id="yellow-grey" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p10-c1" class="circle"></div>
+                  <div id="p10-c2" class="circle"></div>
+                  <div id="p10-c3" class="circle"></div>
+                  <div id="p10-c4" class="circle"></div>
+                  <div id="p10-c5" class="circle"></div>
+                </div>
+                <div id="neon" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p11-c1" class="circle"></div>
+                  <div id="p11-c2" class="circle"></div>
+                  <div id="p11-c3" class="circle"></div>
+                  <div id="p11-c4" class="circle"></div>
+                  <div id="p11-c5" class="circle"></div>
+                </div>
+                <div id="grayscale" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p12-c1" class="circle"></div>
+                  <div id="p12-c2" class="circle"></div>
+                  <div id="p12-c3" class="circle"></div>
+                  <div id="p12-c4" class="circle"></div>
+                  <div id="p12-c5" class="circle"></div>
+                </div>
               </div>
             </div>
+            <!-- <input href="select-pre" class="submit-button" type="submit" value="Submit"> -->
+            <input class="submit-button" type="submit" value="Submit" onClick="sendSelected()">
           </div>
         </div>
       </div>

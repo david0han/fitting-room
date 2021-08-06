@@ -6,11 +6,17 @@
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/pre-select-styles.css' %}" />
+      
+      <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
     </head>
 
-
     <body>
-      <h3 id="style-name">Cottagecore</h3>
+      <div id="title-holder">
+
+      </div>
+      <script type="text/javascript">
+        writingTitle();
+      </script>
       <!-- make based on selected themes -->
       <div id="main-content" class="d-flex flex-row scrollmenu">
         <div class="outfit-holder d-flex flex-column">
