@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
 
     <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'fittingroom/vendor/paper/paper-full.min.js' %}"></script>
 
     <style>
         .butt {
@@ -134,10 +133,8 @@
         console.log(receivedMessage)
         var received = JSON.parse(receivedMessage.data);
 
-        // if (first person and new card) {
-        //     socket.send(card= false);
-        // }
         
+
         console.log(received);
         console.log("socket receiving");
 
@@ -163,7 +160,6 @@
             submitText();
             document.getElementById('msg').value = "";
         }
-        
     });
 
     $( "#msg" ).keypress(function(event) {
