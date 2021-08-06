@@ -7,7 +7,7 @@
     z-index: 100;
     display: flex;
     justify-content: center;
-    animation: byeBye 1.5s ease-in 0.75s forwards;
+    animation: byeBye 1.5s ease-in 0.70s forwards;
 }
   
 #curtains img {
@@ -15,11 +15,11 @@
 }
 
 #left-curtain {
-    animation: moveLeft 1s ease-in 0.75s forwards;
+    animation: moveLeft 1s ease-in 0.70s forwards;
 }
  
 #right-curtain {
-    animation: moveRight 1s ease-in 0.75s forwards;
+    animation: moveRight 1s ease-in 0.70s forwards;
 }
 
 @keyframes moveLeft {
