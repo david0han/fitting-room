@@ -52,28 +52,15 @@
       var socket = new WebSocket(
         'ws://' + window.location.host + '/ws/fittingroom');
 
-    function submitText() {
-        var text = {
-            "type": "text",
-            "uid": document.getElementById("name").value,
-            "text": document.getElementById("msg").value
-        };
-        
-        socket.send(JSON.stringify(text));
-    }
-
     $( document ).ready(function() {
         var clothes = {
-            "hat": "sun hat",
-            "top": "dress",
-            "bottom": "",
-            "shoes": "heels"
-        };
+          
+        }
         var card = {
             "type": "card",
             "uid": "",
             "clothes": clothes,
-            "newCard": false
+            "newCard": true
         };
         socket.onopen = () => socket.send(JSON.stringify(card));
     });
@@ -83,44 +70,40 @@
         var received = JSON.parse(receivedMessage.data);
         console.log(received);
         console.log("socket receiving");
+        
+        
 
         if (received.type == "card") {
-          cards.push(received);
-          if (received.newCard) {
-            var clothes = {
-                "hat": "sun hat",
-                "top": "dress",
-                "bottom": "",
-                "shoes": "heels"
-            };
-            var card = {
-                "type": "card",
-                "uid": cards[0].uid,
-                "clothes": clothes,
-                "newCard": false
-            };
-            socket.send(JSON.stringify(card));
+          if (!uids.includes(received.uid) && received.uid != "") {
+            console.log("hat: " + received.clothes.hat);
+
+            var elem = document.createElement("img");
+            elem.src = received.clothes.hat;
+
+            $(".users").append(received.uid + " ");
+            document.getElementById("main-content").appendChild(elem);
+            
+            uids.push(received.uid);
+            cards.push(received);
           }
           
-          if (!uids.includes(received.uid)) {
-            console.log("YES");
-            $(".users").append(received.clothes.hat);
+          if (received.newCard) {
+            cards.push(received);
             uids.push(received.uid);
+            for (var i = 0; i < cards.length; i++) {
+              var card = {
+                  "type": "card",
+                  "uid": cards[i].uid,
+                  "clothes": cards[i].clothes,
+                  "newCard": false
+              };
+              socket.send(JSON.stringify(card));
+            }
           }
-        // $(".users").append('<div>cards[cards.length].clothes.hat</div>')
-        // for (var i = 0; i < cards.length; i++) {
-        //   if (cards[i].uid = received.uid) {
-        //     var hat = cards[i].clothes.hat
-        //     $(".users").append(hat);
-        //   }
-
-        // }
+          
+          
         }
         
-        
-
-        
-
         // console.log(received);
         // console.log("socket receiving");
 

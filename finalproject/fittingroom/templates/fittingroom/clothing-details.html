@@ -24,6 +24,9 @@
         </div>
       </div>
 
+      <label for="article">Clothing Article:</label>
+      <input type="text" id="article">
+      <img id = "hat" src="{% static 'images/hat.png' %}">
       <a href="/fittingroom/room" class="btn finButton">
         Share!
       </a>
@@ -39,15 +42,12 @@
 
       function submitCard() {
           var clothes = {
-              "hat": "sun hat",
-              "top": "dress",
-              "bottom": "",
-              "shoes": "heels"
-          };
+            "hat": document.getElementById("hat").src,
+          }
 
           var card = {
               "type": "card",
-              "uid": uid,
+              "uid": document.getElementById("article").value,
               "clothes": clothes,
               "newCard": true
           };
