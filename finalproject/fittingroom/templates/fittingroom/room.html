@@ -75,6 +75,9 @@
         #msg {
           width: 80%;
         }
+        #user {
+          margin: 2%;
+        }
 
       </style>
     </head>
@@ -87,13 +90,14 @@
         </div>
       </div>
       <div id = "chatbox">
-        <div id = "chat">
-
+        <div id = "user">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
         </div>
+        
+        <div id = "chat"></div>
         <div id = "chatinput">
-    
           <input type="text" id="msg">
-          
           <div class = "butt">
               SEND
           </div>
@@ -159,7 +163,7 @@
     function submitText() {
         var text = {
             "type": "text",
-            // "uid": document.getElementById("name").value,
+            "uid": document.getElementById("name").value,
             "text": document.getElementById("msg").value
         };
         socket.send(JSON.stringify(text));
@@ -172,15 +176,19 @@
         console.log("socket receiving");
         
         if (received.type == "card") {
-          if (uid == "") {
-            if (uids.length != 0 && uids[0] != "") {
-              uid = uids[0];
-            }
-            else {
-              uid = received.uid;
-            }
+
+          // if (uid == "") {
+          //   if (uids[0] != "") {
+          //     uid = uids[0];
+          //   }
+          //   if (received.uid != "") {
+          //     uid = received.uid;
+          //   }
             
-          }
+          //   console.log("uid: " + uid);
+          // }
+          
+          
           if (!uids.includes(received.uid) && received.uid != "") {
             console.log("hat: " + received.clothes.hat);
 
@@ -195,6 +203,7 @@
           }
           
           if (received.newCard) {
+            
             cards.push(received);
             uids.push(received.uid);
             for (var i = 0; i < cards.length; i++) {
@@ -212,7 +221,8 @@
         if (received.type == "text") {
             var bubble = document.createElement("div");
             bubble.classList.add("bubble");
-            var message = document.createTextNode(uid + ": " + received.text);
+            // uid = document.getElementById("name").value;
+            var message = document.createTextNode(received.uid + ": " + received.text);
             
             
             bubble.appendChild(message);
@@ -227,18 +237,33 @@
     };
 
     $( ".butt" ).click(function() {
-        if (!document.getElementById('msg').value == "") {
+        if (!document.getElementById('msg').value == "" && (document.getElementById('name').value != "" || $("#user").is(":hidden"))) {
             submitText();
             document.getElementById('msg').value = "";
+            if (!$("#user").is(":hidden")) {
+              $( "#user" ).hide("slow");
+            }
+        }
+        if (document.getElementById('name').value == "" && !$("#user").is(":hidden")) {
+          alert( "Please enter a name >:(" );
         }
     });
 
     $( "#msg" ).keypress(function(event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
-        if(keycode == '13' && !document.getElementById('msg').value == ""){
+        if (keycode == '13') {
+          if(!document.getElementById('msg').value == "" && (document.getElementById('name').value != "" || $("#user").is(":hidden"))){
             submitText();
             document.getElementById('msg').value = "";
+            if (!$("#user").is(":hidden")) {
+              $( "#user" ).hide("slow");
+            }
+          }
+          if (document.getElementById('name').value == "" && !$("#user").is(":hidden")) {
+          alert( "Please enter a name >:(" );
         }
+        }
+        
     });
 
     $( "#chatbutt" ).click(function() {
