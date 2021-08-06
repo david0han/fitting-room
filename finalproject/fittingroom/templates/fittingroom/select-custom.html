@@ -5,70 +5,34 @@
     <head>
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
-      
+      <!-- sav testing stuff -->
+      <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/pre-select-styles.css' %}" />
+      <!-- sav testing stiff ^^ -->
+
+
 	    <script src="{% static '/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	    <script src="{% static '/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
     </head>
 
 
     <body>
-      <div id="menu" class="cover dropdown d-flex flex-column">
-        <div class="icons">
-          <img src= "{% static 'images/down-arrow.svg' %}" onClick="toggleStyles()">
-        </div>
-        <div id="options" class="style-content hidden d-flex flex-row">
-          <div class="checklist-holder">
-            <label class="container">
-              <p>Hats</p>
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              <p>Earpieces</p>
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              <p>Neckpieces</p>
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              <p>Handpieces</p>
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              <p>Dresses</p>
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-      </div>
       <div id="main-content" class="d-flex flex-column">
-        <div id ="dropdownn"><d
-iv id="drop-flex" class="d-flex flex-column">
+        <div id='dropdownn'>
+        <div id="drop-flex" class="d-flex flex-column">
           <h2>Choose more pieces</h2>
-          <div id="menu" class="cover dropdown d-flex flex-column">
-            
-            <div class="icons">
+          <div id="menu" class="cover dropdownn d-flex flex-column">
+            <div class="iconss">
               <img src= "{% static 'images/down-arrow.svg' %}" onClick="toggleStyles()">
             </div>
             <div id="options" class="style-content hidden d-flex flex-row">
               <div class="checklist-holder">
                 <label class="container">
-                  <p>Hat</p>
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>Glasses</p>
+                  <p>Head</p>
                   <input type="checkbox">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container">
-                  <p>Bracelet</p>
+                  <p>Top</p>
                   <input type="checkbox">
                   <span class="checkmark"></span>
                 </label>
@@ -78,43 +42,53 @@ iv id="drop-flex" class="d-flex flex-column">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container">
-                  <p>Dress</p>
+                  <p>Bottom</p>
                   <input type="checkbox">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container">
-                  <p>Shirt</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>Pants</p>
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <p>Footware</p>
+                  <p>Footwear</p>
                   <input type="checkbox">
                   <span class="checkmark"></span>
                 </label>
               </div>
-              <div class="palette-holder">
-                <!-- palettes -->
-                <li>this is filler text</li>
-                <li>this is filler text</li>
-              </div>
-          </div>
+            </div>
           </div>
         </div>
-        <div class="headbox" onClick="clothingClicked()"> <img class="test" id="hat" src="{% static 'images/hat.png' %}" > </div>
+      </div>
 
-      
+      <!-- sav testing stuff -->
+      <div class="outfit-holder d-flex flex-column">
+        <div class="hat">
+          <img src="{% static 'images/Untitled-9.png' %}">
+        </div>
+        <div class="one-piece">
+          <img src="{% static 'images/Untitled.png' %}">
+        </div>
+        <div class="wrist-piece">
+          <img src="{% static 'images/Untitled-6.png' %}">
+        </div> 
+        <div class="shoes">
+          <img src="{% static 'images/Untitled-13.png' %}">  
+        </div>                 
+      </div>
+      <!-- sav testing stuff ^^ -->
+
         <a class="btn finButton" href="room" role="button">
             Finish!
         </a>   
       </div>
-    
-
+      <div class="outfit">
+        <div id="headbox" class="headbox" onClick="clothingClicked()"> <img id="hat" src="{% static 'images/hat.png' %}"> </div>
+      </div>
+      <div class="pieceTab d-flex flex-column">
+        <div class="piece" onClick="clothingClicked()"> 
+          <img id="hat" src="{% static 'images/hat.png' %}"> 
+        </div>
+        <div class="piece" onClick="clothingClicked()"> 
+          <img id="fadora" src="{% static 'images/fandora.jpeg' %}"> 
+        </div>
+      </div>
       <div class="container-flex">
         <div class = "d-flex flex-row navBar">
           <div class ="col-3 navButton">
@@ -139,19 +113,91 @@ iv id="drop-flex" class="d-flex flex-column">
       <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
       <script language = "javascript">
         function clothingClicked() {
-          document.getElementById("hat").src = "{% static 'images/fandora.jpeg' %}";
+          var headItem = document.getElementById("headbox");
+          headItem.style.borderStyle = "solid";
+          
         }
         
       </script>
 
       <style>
 
-        .headbox img {
-          width: 70%;
+        #dropdownn {
+          left: 5%;
+          position: absolute;
         }
 
-        .test {
-          width: 20% !important;
+        .headbox {
+          left: 50%;
+          position: relative;
+          height: 102px;
+          width: 92px;
+          display: inline-block;
+          border-color: black;
+          border-radius: 2px;
+        }
+
+        .piece img {
+          max-width: 100%;
+          /* position: center; */
+        }
+
+        .headbox img {
+          max-width: 100%;
+          position: center;
+        }
+
+        .pieceTab img {
+          max-width: 100%;
+        }
+
+
+        .finButton {
+          background-color: #D0B5A3;
+          color: #EAE5E1;
+          position: fixed;
+          font-size: 25px;
+          font-family: 'Lato';
+          padding: 15px 32px;
+          border: none; 
+          text-align: center;
+          left: 10%;
+          bottom: 15%;
+          width: 15%;
+          height: auto;
+          border-radius: 30px;
+        }
+
+        .finButton:hover {
+          background-color: #c0a796;
+          color: #EAE5E1;
+          position: fixed;
+          font-size: auto;
+          padding: 15px 32px; 
+          border: none; 
+        }
+
+        .finButton:active {
+          background-color: #c0a796;
+          color: #EAE5E1;
+          position: fixed;
+          font-size: auto;
+          padding: 15px 32px; 
+          border: none; 
+        }
+
+        .pieceTab {
+          align-items: center;
+          justify-content: center;
+          border-style: solid;
+          border-color: #D4C7BE;
+          border-width: 5px;
+          height: 100%;
+          padding: 20px;
+          right: 0%;
+          width: 25%;
+          bottom: 0%;
+          position: fixed;
         }
 
       </style>
