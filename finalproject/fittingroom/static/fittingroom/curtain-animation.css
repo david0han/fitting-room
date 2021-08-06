@@ -7,6 +7,7 @@
     z-index: 100;
     display: flex;
     justify-content: center;
+    animation: byeBye 1.5s ease-in 0.75s forwards;
 }
   
 #curtains img {
@@ -25,13 +26,13 @@
     0% {
         /* visibility: visible; */
         opacity: 100%;
-        display: block;
+        
         transform: translateX(0px);
     }
 
     100% {
         opacity: 0%;
-        visibility: hidden;
+        /* visibility: hidden; */
         display: none;
         transform: translateX(-450px);
     }
@@ -41,14 +42,21 @@
     0% {
         /* visibility: visible; */
         opacity: 100%;
-        display: block;
+        
         transform: translateX(0px);
     }
 
     100% {
         opacity: 0%;
-        visibility: hidden;
+        /* visibility: hidden; */
         display: none;
         transform: translateX(450px);        
+    }
+}
+
+@keyframes byeBye {
+    100% {
+        display: none; 
+        z-index: -100;    
     }
 }
