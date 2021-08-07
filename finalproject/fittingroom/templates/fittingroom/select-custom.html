@@ -5,10 +5,7 @@
     <head>
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
-      <!-- sav testing stuff -->
-      <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/pre-select-styles.css' %}" />
-      <!-- sav testing stiff ^^ -->
-
+      <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/select-custom.css' %}" />
 
 	    <script src="{% static '/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	    <script src="{% static '/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
@@ -60,16 +57,19 @@
       <!-- sav testing stuff -->
       <div class="outfit-holder d-flex flex-column">
         <div class="hat">
-          <img src="{% static 'images/Untitled-9.png' %}">
+          <img id='hatImg' onClick="hatClicked()" src="{% static 'images/hat.png' %}">
         </div>
-        <div class="one-piece">
-          <img src="{% static 'images/Untitled.png' %}">
+        <div class="top">
+          <img id='topImg' onClick="topClicked()" src="{% static 'images/shirt.jpg' %}">
         </div>
-        <div class="wrist-piece">
-          <img src="{% static 'images/Untitled-6.png' %}">
+        <div class="bottom">
+          <img id='bottomImg' onClick="bottomClicked()" src="{% static 'images/jean.webp' %}">
+        </div>
+        <div class="accessory">
+          <img id='accessoryImg' onClick="accessoryClicked()" src="{% static 'images/Untitled-6.png' %}">
         </div> 
         <div class="shoes">
-          <img src="{% static 'images/Untitled-13.png' %}">  
+          <img id='shoesImg' onClick="shoeClicked()" src="{% static 'images/Untitled-13.png' %}">  
         </div>                 
       </div>
       <!-- sav testing stuff ^^ -->
@@ -78,16 +78,33 @@
             Finish!
         </a>   
       </div>
-      <div class="outfit">
-        <div id="headbox" class="headbox" onClick="clothingClicked()"> <img id="hat" src="{% static 'images/hat.png' %}"> </div>
-      </div>
-      <div class="pieceTab d-flex flex-column">
-        <div class="piece" onClick="clothingClicked()"> 
-          <img id="hat" src="{% static 'images/hat.png' %}"> 
-        </div>
-        <div class="piece" onClick="clothingClicked()"> 
-          <img id="fadora" src="{% static 'images/fandora.jpeg' %}"> 
-        </div>
+      <div id="pieceTab" class="pieceTab d-flex flex-column">
+          <div id="hatTab">
+            <img id="hat" onClick="hatInTabClicked('hat')" src="{% static 'images/hat.png' %}"> 
+            <img id="hat1" onClick="hatInTabClicked('hat1')" src="{% static 'images/fandora.jpeg' %}"> 
+            <img id="hat2" onClick="hatInTabClicked('hat2')" src="{% static 'images/hat2.jpg' %}"> 
+            <img id="hat3" onClick="hatInTabClicked('hat3')" src="{% static 'images/hat1.webp' %}"> 
+          </div>
+          <div id='topTab'> 
+            <img id="top" onClick="topInTabClicked('top')" src="{% static 'images/shirt.jpg' %}">
+            <img id="top1" onClick="topInTabClicked('top1')" src="{% static 'images/shirt1.jpg' %}"> 
+            <img id="top2" onClick="topInTabClicked('top2')" src="{% static 'images/shirt2.jpg' %}"> 
+            <img id="top3" onClick="topInTabClicked('top3')" src="{% static 'images/shirt3.webp' %}"> 
+          </div>
+          <div id="bottomTab">
+            <img id="bottom" onClick="bottomInTabClicked('bottom')" src="{% static 'images/jean.webp' %}"> 
+            <img id="bottom1" onClick="bottomInTabClicked('bottom1')" src="{% static 'images/pants1.jpg' %}"> 
+            <img id="bottom2" onClick="bottomInTabClicked('bottom2')" src="{% static 'images/pants2.jpg' %}"> 
+            <img id="bottom3" onClick="bottomInTabClicked('bottom3')" src="{% static 'images/pant3.webp' %}"> 
+          </div>
+          <div id="accessoryTab">
+            <img id="hat" src="{% static 'images/hat.png' %}"> 
+            <img id="fadora" src="{% static 'images/fandora.jpeg' %}"> 
+          </div>
+          <div id="shoesTab">
+            <img id="hat" src="{% static 'images/hat.png' %}"> 
+            <img id="fadora" src="{% static 'images/fandora.jpeg' %}"> 
+          </div>
       </div>
       <div class="container-flex">
         <div class = "d-flex flex-row navBar">
@@ -114,95 +131,137 @@
 
       <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
       <script language = "javascript">
-        function clothingClicked() {
-          var headItem = document.getElementById("headbox");
+        function hatClicked() {
+          var headItem = document.getElementById("hatImg");
+          var topItem = document.getElementById("topImg");
+          var bottomItem = document.getElementById("bottomImg");
+          var extraItem = document.getElementById("accessoryImg");
+          var shoesItem = document.getElementById("shoesImg");
+          var hatTab = document.getElementById("hatTab")
+          var pieceTab = document.getElementById("pieceTab");
           headItem.style.borderStyle = "solid";
+          topItem.style.borderStyle = "none";
+          bottomItem.style.borderStyle = "none";
+          extraItem.style.borderStyle = "none";
+          shoesItem.style.borderStyle = "none";
+          hatTab.style.display = 'initial';
+          topTab.style.display = 'none';
+          bottomTab.style.display = 'none';
+          accessoryTab.style.display = 'none';
+          shoesTab.style.display = 'none';
+        }
+
+        function topClicked() {
+          var headItem = document.getElementById("hatImg");
+          var topItem = document.getElementById("topImg");
+          var bottomItem = document.getElementById("bottomImg");
+          var extraItem = document.getElementById("accessoryImg");
+          var shoesItem = document.getElementById("shoesImg");
+          var pieceTab = document.getElementById("pieceTab");
+          headItem.style.borderStyle = "none";
+          topItem.style.borderStyle = "solid";
+          bottomItem.style.borderStyle = "none";
+          extraItem.style.borderStyle = "none";
+          shoesItem.style.borderStyle = "none";
+          hatTab.style.display = 'none';
+          topTab.style.display = 'initial';
+          bottomTab.style.display = 'none';
+          accessoryTab.style.display = 'none';
+          shoesTab.style.display = 'none';
+        }
+        function bottomClicked() {
+          var headItem = document.getElementById("hatImg");
+          var topItem = document.getElementById("topImg");
+          var bottomItem = document.getElementById("bottomImg");
+          var extraItem = document.getElementById("accessoryImg");
+          var shoesItem = document.getElementById("shoesImg");
+          var pieceTab = document.getElementById("pieceTab");
+          headItem.style.borderStyle = "none";
+          topItem.style.borderStyle = "none";
+          bottomItem.style.borderStyle = "solid";
+          extraItem.style.borderStyle = "none";
+          shoesItem.style.borderStyle = "none";
+          hatTab.style.display = 'none';
+          topTab.style.display = 'none';
+          bottomTab.style.display = 'initial';
+          accessoryTab.style.display = 'none';
+          shoesTab.style.display = 'none';
+        }
+        function accessoryClicked() {
+          var headItem = document.getElementById("hatImg");
+          var topItem = document.getElementById("topImg");
+          var bottomItem = document.getElementById("bottomImg");
+          var extraItem = document.getElementById("accessoryImg");
+          var shoesItem = document.getElementById("shoesImg");
+          var pieceTab = document.getElementById("pieceTab");
+          headItem.style.borderStyle = "none";
+          topItem.style.borderStyle = "none";
+          bottomItem.style.borderStyle = "none";
+          extraItem.style.borderStyle = "solid";
+          shoesItem.style.borderStyle = "none";
+          hatTab.style.display = 'none';
+          topTab.style.display = 'none';
+          bottomTab.style.display = 'none';
+          accessoryTab.style.display = 'initial';
+          shoesTab.style.display = 'none';
+        }
+        function shoeClicked() {
+          var headItem = document.getElementById("hatImg");
+          var topItem = document.getElementById("topImg");
+          var bottomItem = document.getElementById("bottomImg");
+          var extraItem = document.getElementById("accessoryImg");
+          var shoesItem = document.getElementById("shoesImg");
+          var pieceTab = document.getElementById("pieceTab");
+          headItem.style.borderStyle = "none";
+          topItem.style.borderStyle = "none";
+          bottomItem.style.borderStyle = "none";
+          extraItem.style.borderStyle = "none";
+          shoesItem.style.borderStyle = "solid";
+          hatTab.style.display = 'none';
+          topTab.style.display = 'none';
+          bottomTab.style.display = 'none';
+          accessoryTab.style.display = 'none';
+          shoesTab.style.display = 'initial';
+         }
+
+         function hatInTabClicked(clicked_hat) {
+          var hatTab_img = document.getElementById("hatTab").getElementsByTagName('img');
           
-        }
-        
+          for (let i = 0; i < hatTab_img.length; i++) {
+            hatTab_img[i].style.borderStyle = "none";
+          }
+          var hatTab_clicked = document.getElementById(clicked_hat);
+          hatTab_clicked.style.borderStyle = "solid";
+          var outfit_hat = document.getElementById("hatImg");
+          outfit_hat.src = hatTab_clicked.src;
+         }
+
+         function topInTabClicked(clicked_top) {
+          var topTab_img = document.getElementById("topTab").getElementsByTagName('img');
+          
+          for (let i = 0; i < topTab_img.length; i++) {
+            topTab_img[i].style.borderStyle = "none";
+          }
+          var topTab_clicked = document.getElementById(clicked_top);
+          topTab_clicked.style.borderStyle = "solid";
+          var outfit_top = document.getElementById("topImg");
+          outfit_top.src = topTab_clicked.src;
+         }
+
+         function bottomInTabClicked(clicked_bottom) {
+          var bottomTab_img = document.getElementById("bottomTab").getElementsByTagName('img');
+          
+          for (let i = 0; i < bottomTab_img.length; i++) {
+            bottomTab_img[i].style.borderStyle = "none";
+          }
+          var bottomTab_clicked = document.getElementById(clicked_bottom);
+          bottomTab_clicked.style.borderStyle = "solid";
+          var outfit_bottom = document.getElementById("bottomImg");
+          outfit_bottom.src = bottomTab_clicked.src;
+         }
+
+
       </script>
-
-      <style>
-
-        #dropdownn {
-          left: 5%;
-          position: absolute;
-        }
-
-        .headbox {
-          left: 50%;
-          position: relative;
-          height: 102px;
-          width: 92px;
-          display: inline-block;
-          border-color: black;
-          border-radius: 2px;
-        }
-
-        .piece img {
-          max-width: 100%;
-          /* position: center; */
-        }
-
-        .headbox img {
-          max-width: 100%;
-          position: center;
-        }
-
-        .pieceTab img {
-          max-width: 100%;
-        }
-
-
-        .finButton {
-          background-color: #D0B5A3;
-          color: #EAE5E1;
-          position: fixed;
-          font-size: 25px;
-          font-family: 'Lato';
-          padding: 15px 32px;
-          border: none; 
-          text-align: center;
-          left: 10%;
-          bottom: 15%;
-          width: 15%;
-          height: auto;
-          border-radius: 30px;
-        }
-
-        .finButton:hover {
-          background-color: #c0a796;
-          color: #EAE5E1;
-          position: fixed;
-          font-size: auto;
-          padding: 15px 32px; 
-          border: none; 
-        }
-
-        .finButton:active {
-          background-color: #c0a796;
-          color: #EAE5E1;
-          position: fixed;
-          font-size: auto;
-          padding: 15px 32px; 
-          border: none; 
-        }
-
-        .pieceTab {
-          align-items: center;
-          justify-content: center;
-          border-style: solid;
-          border-color: #D4C7BE;
-          border-width: 5px;
-          height: 100%;
-          padding: 20px;
-          right: 0%;
-          width: 25%;
-          bottom: 0%;
-          position: fixed;
-        }
-
-      </style>
     </body>
     
 </html>
