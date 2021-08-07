@@ -10,10 +10,10 @@
     </head>
 
     <body>
-      <div id="curtains">
+      <!-- <div id="curtains">
         <img id="left-curtain" src= "{% static 'images/left-cropped.png' %}">
         <img id="right-curtain" src= "{% static 'images/right-cropped.png' %}">
-      </div>
+      </div> -->
       <div id="main-content" class="d-flex flex-column">
         <div id="title-box" class="d-flex flex-column">
           <h1>Fitting Room</h1>
@@ -24,6 +24,15 @@
             <div class="icons">
               <img src= "{% static 'images/down-arrow.svg' %}" onClick="toggleStyles()">
             </div>
+
+            <label id="toggleButton" class="switch">
+              <input type="checkbox" id="togBtn">
+              <div class="slider round">
+              <p class="on">Custom</p>
+              <p class="off">Pre-made</p>
+              </div>
+            </label>
+
             <div id="options" class="style-content hidden d-flex flex-row">
               <div class="checklist-holder">
                 <!-- <form action="select-pre" method="get"> -->

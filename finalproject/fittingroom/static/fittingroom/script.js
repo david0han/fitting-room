@@ -52,27 +52,15 @@ function getSelectedPalette() {
 }
 
 function sendSelected() {
-    var url = window.location.origin + "/fittingroom/select-pre";
+    var url = window.location.origin + toggleRedirect();
+
     var themes = getSelectedThemes();
    
     url += "?&";
     for (var i = 0; i < themes.length; i++) {
         url += "themes=" + themes[i] + "&";
     }
-   
 
-    // url += "?themes";
-    // for (var i = 0; i < themes.length; i++) {
-    //     // url += "themes=" + themes[i] + "&";
-    //     url += "themes" + i + "=" + themes[i] + "&";
-    // }
-    
-   
-    // url += "?";
-    // for (var i = 0; i < themes.length; i++) {
-    //     // url += "themes=" + themes[i] + "&";
-    //     url += "themes" + i + "=" + themes[i] + ",";
-    // }
     url += "colors=" + getSelectedPalette();
 
     window.location.replace(url);
@@ -91,19 +79,9 @@ function writingTitle() {
         titleString += String(titles[i]) + " ";
     }
 
-    // for (const [key, value] of stylesAndColor) {
-    //     console.log(key+ ": "+ value);
-    // }
-
     var div = document.getElementById("title-holder");
     var h3 = document.createElement("h3");
     var text = document.createTextNode(titleString)
-    
-    // for (var i = 0; i <title.length; i++) {
-    //     titleString += String(title[i]) + " ";
-    // }
-
-    // var textNode = document.createTextNode(String(title));
 
     div.appendChild(h3);
     // h3.appendChild(title);
@@ -112,71 +90,16 @@ function writingTitle() {
     h3.classList.toggle("style-name");
 }
 
+function toggleRedirect() {
+    var tog = document.getElementById('toggleButton');
+    var urlFirstHalf = "/fittingroom/";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function writingTitle() {
-//     var stylesAndColor = new URLSearchParams(window.location.href);
-
-//     // var title = getSelectedThemes();
-//     var titles = stylesAndColor.getAll('themes');
-//     var titleString = ""
-
-//     for (var i = 0; i <titles.length; i++) {
-//         titleString += String(titles[i]) + " ";
-//     }
-
-//     // for (const [key, value] of stylesAndColor) {
-//     //     console.log(key+ ": "+ value);
-//     // }
-
-//     var div = document.getElementById("title-holder");
-//     var h3 = document.createElement("h3");
-//     var text = document.createTextNode(titleString)
-    
-//     // for (var i = 0; i <title.length; i++) {
-//     //     titleString += String(title[i]) + " ";
-//     // }
-
-//     // var textNode = document.createTextNode(String(title));
-
-//     div.appendChild(h3);
-//     // h3.appendChild(title);
-//     h3.appendChild(text);
-
-//     h3.classList.toggle("style-name");
-// }
-
-// on click, redirect to nexty screen + additional parameters
-// can put qstring params in href
-
-
-// button on click, create url(add in params) n redirect
-
-// window.location.opopopopopopopopokaspofkspaodfjosaidgasidjasdkfjsakdfsakjnfskajgbskagsaahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    // custom if true
+    if (tog.children[0].checked) { 
+        urlFirstHalf += "select-custom";
+    } else {
+        // pre-made if true
+        urlFirstHalf += "select-pre";
+    }
+    return urlFirstHalf;
+}

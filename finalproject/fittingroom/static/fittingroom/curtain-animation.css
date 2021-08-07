@@ -26,7 +26,6 @@
     0% {
         /* visibility: visible; */
         opacity: 100%;
-        
         transform: translateX(0px);
     }
 
@@ -42,7 +41,6 @@
     0% {
         /* visibility: visible; */
         opacity: 100%;
-        
         transform: translateX(0px);
     }
 
@@ -59,4 +57,101 @@
         display: none; 
         z-index: -100;    
     }
+}
+
+/* Toggle Button fr StackOverflow */
+/* https://stackoverflow.com/questions/39846282/how-to-add-the-text-on-and-off-to-toggle-button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 155px;
+    height: 34px;
+    margin: 100px 0px -20px 25px;
+}
+  
+.switch input {
+    display:none;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #EAE5E1;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 5px solid #D4C7BE;
+    /* padding: 16px; */
+    padding: 20px;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 42px;
+    width: 42px;
+    left: -1px;
+    bottom: 0px;
+    background-color: #D4C7BE;
+    -webkit-transition: .4s;
+    transition: .4s;
+    /* border: 5px solid #D4C7BE; */
+}
+  
+input:checked + .slider {
+    background-color: #995C40;
+}
+  
+/* input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+} */
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(105px);
+    -ms-transform: translateX(105px);
+    transform: translateX(105px);
+}
+  
+.on {
+    display: none;
+}
+  
+/* custom */
+.on {
+    color: #EAE5E1;
+    position: relative;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+ }
+  
+/* pre-made */
+.off {
+    color: #995C40;
+    position: relative;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 75%;
+    font-size: 20px;
+}
+
+input:checked+ .slider .on {
+    display: block;
+}
+  
+input:checked + .slider .off {
+    display: none;
+}
+  
+  /* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
 }
