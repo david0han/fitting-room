@@ -241,12 +241,17 @@
           if (!uids.includes(received.uid) && received.uid != "") {
             console.log("hat: " + received.clothes.hat);
 
-            for ([key, value] in received.clothes) {
-              var elem = document.createElement("img");
-              elem.src = received.clothes.hat;
-            }
-            
-            document.getElementById("main-content").appendChild(elem);
+            // var elem = document.createElement("img");
+            // elem.src = received.clothes.hat;
+            // document.getElementById("main-content").appendChild(elem);
+
+            makeClothes(
+              received.clothes.hat, 
+              received.clothes.top,
+              received.clothes.bottom,
+              received.clothes.accessory,
+              received.clothes.shoes
+              );
             
             uids.push(received.uid);
             cards.push(received);
@@ -325,7 +330,7 @@
       });
     });
 
-    function makeClothes() {
+    function makeClothes(hatsrc, topsrc, bottomsrc, accsrc, shoessrc) {
       var mainDiv = document.getElementById('main-content');
 
       var shellDiv = document.createElement("div");
@@ -352,11 +357,11 @@
       var imgAccessory = document.createElement("img");
       var imgShoes = document.createElement("img");
 
-      imgHat.src = "";
-      imgTop.src = "";
-      imgBottom.src = "";
-      imgAccessory.src = "";
-      imgShoes.src = "";
+      imgHat.src = hatsrc;
+      imgTop.src = topsrc;
+      imgBottom.src = bottomsrc;
+      imgAccessory.src = accsrc;
+      imgShoes.src = shoessrc;
 
       shellDiv.appendChild(divHat);
       shellDiv.appendChild(divTop);

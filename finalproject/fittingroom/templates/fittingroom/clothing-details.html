@@ -24,9 +24,24 @@
         </div>
       </div>
 
-      <label for="username">Name:</label>
-      <input type="text" id="username">
-      <img id = "hat" src="{% static 'images/hat.png' %}">
+      <!-- <label for="username">Name:</label>
+      <input type="text" id="username"> -->
+
+      <div class="outfit-holder d-flex flex-column">
+        <div class="hat">
+          <img src="{% static 'images/Untitled-9.png' %}">
+        </div>
+        <div class="one-piece">
+          <img src="{% static 'images/Untitled.png' %}">
+        </div>
+        <div class="wrist-piece">
+          <img src="{% static 'images/Untitled-6.png' %}">
+        </div> 
+        <div class="shoes">
+          <img src="{% static 'images/Untitled-13.png' %}">  
+        </div>
+      </div>
+
       <a href="/fittingroom/room" class="btn finButton">
         Share!
       </a>
@@ -43,6 +58,10 @@
       function submitCard() {
           var clothes = {
             "hat": document.getElementById("hat").src,
+            "top": document.getElementById("top").src,
+            "bottom": document.getElementById("bottom").src,
+            "accessory": document.getElementById("accessory").src,
+            "shoes": document.getElementById("shoes").src
           }
 
           var card = {
