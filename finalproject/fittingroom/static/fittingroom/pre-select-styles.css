@@ -38,8 +38,9 @@ h3 {
     margin-bottom: -50px;
 }
 
-.bottom {
-
+.bottom img {
+    width: 300px;
+    margin-bottom: -50px;
 }
 
 .accessory {
