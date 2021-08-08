@@ -360,13 +360,17 @@
 
       var imgHat = document.createElement("img");
       var imgTop = document.createElement("img");
-      var imgBottom = document.createElement("img");
+
+      if (bottomsrc !== "") {
+        var imgBottom = document.createElement("img");
+        imgBottom.src = bottomsrc;
+      }      
+      
       var imgAccessory = document.createElement("img");
       var imgShoes = document.createElement("img");
 
       imgHat.src = hatsrc;
       imgTop.src = topsrc;
-      imgBottom.src = bottomsrc;
       imgAccessory.src = accsrc;
       imgShoes.src = shoessrc;
 
