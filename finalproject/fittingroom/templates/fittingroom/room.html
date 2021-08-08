@@ -324,5 +324,51 @@
         // Animation complete.
       });
     });
+
+    function makeClothes() {
+      var mainDiv = document.getElementById('main-content');
+
+      var shellDiv = document.createElement("div");
+      mainDiv.appendChild(shellDiv);
+      shellDiv.classList.toggle('outfit-holder');
+      shellDiv.classList.toggle('d-flex');
+      shellDiv.classList.toggle('flex-column');
+
+      var divHat = document.createElement("div");
+      var divTop = document.createElement("div");
+      var divBottom = document.createElement("div");
+      var divAccessory = document.createElement("div");
+      var divShoes = document.createElement("div");
+
+      divHat.classList.toggle('hat');
+      divTop.classList.toggle('top');
+      divBottom.classList.toggle('bottom');
+      divAccessory.classList.toggle('accessory');
+      divShoes.classList.toggle('shoes');
+
+      var imgHat = document.createElement("img");
+      var imgTop = document.createElement("img");
+      var imgBottom = document.createElement("img");
+      var imgAccessory = document.createElement("img");
+      var imgShoes = document.createElement("img");
+
+      imgHat.src = "";
+      imgTop.src = "";
+      imgBottom.src = "";
+      imgAccessory.src = "";
+      imgShoes.src = "";
+
+      shellDiv.appendChild(divHat);
+      shellDiv.appendChild(divTop);
+      shellDiv.appendChild(divBottom);
+      shellDiv.appendChild(divAccessory);
+      shellDiv.appendChild(divShoes);
+
+      divHat.appendChild(imgHat);
+      divTop.appendChild(imgTop);
+      divBottom.appendChild(imgBottom);
+      divAccessory.appendChild(imgAccessory);
+      divShoes.appendChild(imgShoes);
+    }
     </script>
 </html>
