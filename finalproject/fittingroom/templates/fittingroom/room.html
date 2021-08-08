@@ -337,7 +337,8 @@
       var mainDiv = document.getElementById('main-content');
 
       var shellDiv = document.createElement("div");
-      mainDiv.appendChild(shellDiv);
+      // mainDiv.appendChild(shellDiv);
+      mainDiv.insertBefore(shellDiv, mainDiv.childNodes[1]);
       shellDiv.classList.toggle('outfit-holder');
       shellDiv.classList.toggle('d-flex');
       shellDiv.classList.toggle('flex-column');
