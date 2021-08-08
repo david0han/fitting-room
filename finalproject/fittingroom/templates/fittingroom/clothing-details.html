@@ -24,7 +24,7 @@
             <img src="{% static 'images/Untitled.png' %}">
           </div>
           <div class="bottom">
-        
+            <img src="{% static 'images/Untitled.png' %}">
           </div> 
           <div class="accessory">
             <img src="{% static 'images/Untitled-6.png' %}">
@@ -40,7 +40,7 @@
 
       
 
-      <a href="/fittingroom/room" class="btn finButton">
+      <a href="/fittingroom/room" id = "share" class="btn finButton">
         Share!
       </a>
 
@@ -51,16 +51,16 @@
       var socket = new WebSocket(
         'ws://' + window.location.host + '/ws/fittingroom');
 
-      // var uid = Date.now() % 10000;
+      var uid = Date.now() % 10000;
 
       function submitCard() {
         var mainDiv = document.getElementById('main-content').getElementsByClassName('outfit-holder');
 
         var hat = mainDiv[0].children[0].children[0].src;
-        var top = mainDiv[0].children[0].children[1].src;
-        var bottom = mainDiv[0].children[0].children[2].src;
-        var accessory = mainDiv[0].children[0].children[3].src;
-        var shoes = mainDiv[0].children[0].children[4].src;
+        var top = mainDiv[0].children[1].children[0].src;
+        var bottom = mainDiv[0].children[2].children[0].src;
+        var accessory = mainDiv[0].children[3].children[0].src;
+        var shoes = mainDiv[0].children[4].children[0].src;
 
         var clothes = {
           "hat":hat,
@@ -72,7 +72,7 @@
 
         var card = {
             "type": "card",
-            "uid": document.getElementById("username").value,
+            "uid": uid,
             "clothes": clothes,
             "newCard": true
         };
@@ -81,7 +81,7 @@
       }
 
 
-      $( ".btn.finButton" ).click(function() {
+      $( "#share" ).click(function() {
         submitCard();
       });
       

@@ -198,7 +198,6 @@
 
     $( document ).ready(function() {
         var clothes = {
-          
         }
         var card = {
             "type": "card",
@@ -225,6 +224,11 @@
         console.log("socket receiving");
         
         if (received.type == "card") {
+
+          if (uid) {
+            console.log("hat: " + received.clothes.hat);
+          }
+
 
           // if (uid == "") {
           //   if (uids[0] != "") {
