@@ -25,7 +25,7 @@
               <div class="checklist-holder">
                 <label class="container">
                   <p>Head</p>
-                  <input type="checkbox">
+                  <input type="checkbox" id="headCheck" onClick="dropdownHeadClicked()">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container">
@@ -54,9 +54,8 @@
         </div>
       </div>
 
-      <!-- sav testing stuff -->
       <div class="outfit-holder d-flex flex-column">
-        <div class="hat">
+        <div class="hat hide">
           <img id='hatImg' onClick="hatClicked()" src="{% static 'images/hat.png' %}">
         </div>
         <div class="top">
@@ -72,7 +71,6 @@
           <img id='shoesImg' onClick="shoeClicked()" src="{% static 'images/Untitled-13.png' %}">  
         </div>                 
       </div>
-      <!-- sav testing stuff ^^ -->
 
         <a class="btn finButton" href="room" role="button">
             Finish!
@@ -149,6 +147,7 @@
           bottomTab.style.display = 'none';
           accessoryTab.style.display = 'none';
           shoesTab.style.display = 'none';
+          document.getElementById("hatTab").getElementsByTagName('img')[0].style.borderStyle = 'solid';
         }
 
         function topClicked() {
@@ -168,6 +167,7 @@
           bottomTab.style.display = 'none';
           accessoryTab.style.display = 'none';
           shoesTab.style.display = 'none';
+          document.getElementById("topTab").getElementsByTagName('img')[0].style.borderStyle = 'solid';
         }
         function bottomClicked() {
           var headItem = document.getElementById("hatImg");
@@ -186,6 +186,7 @@
           bottomTab.style.display = 'initial';
           accessoryTab.style.display = 'none';
           shoesTab.style.display = 'none';
+          document.getElementById("bottomTab").getElementsByTagName('img')[0].style.borderStyle = 'solid';
         }
         function accessoryClicked() {
           var headItem = document.getElementById("hatImg");
@@ -204,6 +205,7 @@
           bottomTab.style.display = 'none';
           accessoryTab.style.display = 'initial';
           shoesTab.style.display = 'none';
+          document.getElementById("accessoryTab").getElementsByTagName('img')[0].style.borderStyle = 'solid';
         }
         function shoeClicked() {
           var headItem = document.getElementById("hatImg");
@@ -222,6 +224,7 @@
           bottomTab.style.display = 'none';
           accessoryTab.style.display = 'none';
           shoesTab.style.display = 'initial';
+          document.getElementById("shoesTab").getElementsByTagName('img')[0].style.borderStyle = 'solid';
          }
 
          function hatInTabClicked(clicked_hat) {
@@ -260,6 +263,51 @@
           outfit_bottom.src = bottomTab_clicked.src;
          }
 
+         function accessoryInTabClicked(clicked_accessory) {
+          var accessoryTab_img = document.getElementById("accessoryTab").getElementsByTagName('img');
+          
+          for (let i = 0; i < accessoryTab_img.length; i++) {
+            accessoryTab_img[i].style.borderStyle = "none";
+          }
+          var accessoryTab_clicked = document.getElementById(clicked_accessory);
+          accessoryTab_clicked.style.borderStyle = "solid";
+          var outfit_top = document.getElementById("accessoryImg");
+          outfit_top.src = accessoryTab_clicked.src;
+         }
+
+         function shoesInTabClicked(clicked_shoes) {
+          var shoesTab_img = document.getElementById("shoesTab").getElementsByTagName('img');
+          
+          for (let i = 0; i < shoesTab_img.length; i++) {
+            shoesTab_img[i].style.borderStyle = "none";
+          }
+          var shoesTab_clicked = document.getElementById(clicked_shoes);
+          shoesTab_clicked.style.borderStyle = "solid";
+          var outfit_bottom = document.getElementById("shoesImg");
+          outfit_bottom.src = shoesTab_clicked.src;
+         }
+
+         function dropdownHeadClicked() {
+           var hatBox = document.getElementById('hatImg');
+           var checkBox = document.getElementById('headCheck')
+           if (checkBox.checked) {
+            hatBox.style.visibility = 'visible'
+           }
+           else {
+            hatBox.style.visibility = 'hidden'
+           }
+         }
+
+         function dropdownTopClicked() {
+           var topBox = document.getElementById('topImg');
+           var checkBox = document.getElementById('topCheck')
+           if (checkBox.checked) {
+            topBox.style.visibility = 'visible'
+           }
+           else {
+            topBox.style.visibility = 'hidden'
+           }
+         }
 
       </script>
     </body>
