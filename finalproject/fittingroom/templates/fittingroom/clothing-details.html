@@ -58,9 +58,15 @@
 
         var hat = mainDiv[0].children[0].children[0].src;
         var top = mainDiv[0].children[1].children[0].src;
-        var bottom = mainDiv[0].children[2].children[0].src;
-        var accessory = mainDiv[0].children[3].children[0].src;
-        var shoes = mainDiv[0].children[4].children[0].src;
+        
+        if (mainDiv[0].children.length < 5) {
+          var accessory = mainDiv[0].children[2].children[0].src;
+          var shoes = mainDiv[0].children[3].children[0].src;
+        } else {
+          var bottom = mainDiv[0].children[2].children[0].src;
+          var accessory = mainDiv[0].children[3].children[0].src;
+          var shoes = mainDiv[0].children[4].children[0].src;
+        }        
 
         var clothes = {
           "hat":hat,
