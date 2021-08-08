@@ -69,6 +69,7 @@
           height: 75%;
           top: 7%;
           right: 0;
+          z-index: 100;
         }
         #chat {
           top: 0;
@@ -246,11 +247,6 @@
           
           
           if (!uids.includes(received.uid) && received.uid != "") {
-            console.log("hat: " + received.clothes.hat);
-
-            // var elem = document.createElement("img");
-            // elem.src = received.clothes.hat;
-            // document.getElementById("main-content").appendChild(elem);
 
             makeClothes(
               received.clothes.hat, 
@@ -341,7 +337,8 @@
       var mainDiv = document.getElementById('main-content');
 
       var shellDiv = document.createElement("div");
-      mainDiv.appendChild(shellDiv);
+      // mainDiv.appendChild(shellDiv);
+      mainDiv.insertBefore(shellDiv, mainDiv.childNodes[1]);
       shellDiv.classList.toggle('outfit-holder');
       shellDiv.classList.toggle('d-flex');
       shellDiv.classList.toggle('flex-column');
