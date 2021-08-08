@@ -30,22 +30,22 @@
                 </label>
                 <label class="container">
                   <p>Top</p>
-                  <input type="checkbox">
+                  <input type="checkbox" id="topCheck" onClick="dropdownTopClicked()">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container">
-                  <p>Outer Layer</p>
-                  <input type="checkbox">
+                  <p>Accessory</p>
+                  <input type="checkbox" id="accessoryCheck" onClick="dropdownAccessoryClicked()">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container">
                   <p>Bottom</p>
-                  <input type="checkbox">
+                  <input type="checkbox" id='bottomCheck' onClick="dropdownBottomClicked()">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container">
                   <p>Footwear</p>
-                  <input type="checkbox">
+                  <input type="checkbox" id='shoesCheck' onClick="dropdownShoesClicked()">
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -239,7 +239,7 @@
           outfit_hat.src = hatTab_clicked.src;
          }
 
-         function topInTabClicked(clicked_top) {
+          function topInTabClicked(clicked_top) {
           var topTab_img = document.getElementById("topTab").getElementsByTagName('img');
           
           for (let i = 0; i < topTab_img.length; i++) {
@@ -251,7 +251,7 @@
           outfit_top.src = topTab_clicked.src;
          }
 
-         function bottomInTabClicked(clicked_bottom) {
+          function bottomInTabClicked(clicked_bottom) {
           var bottomTab_img = document.getElementById("bottomTab").getElementsByTagName('img');
           
           for (let i = 0; i < bottomTab_img.length; i++) {
@@ -263,7 +263,7 @@
           outfit_bottom.src = bottomTab_clicked.src;
          }
 
-         function accessoryInTabClicked(clicked_accessory) {
+          function accessoryInTabClicked(clicked_accessory) {
           var accessoryTab_img = document.getElementById("accessoryTab").getElementsByTagName('img');
           
           for (let i = 0; i < accessoryTab_img.length; i++) {
@@ -275,7 +275,7 @@
           outfit_top.src = accessoryTab_clicked.src;
          }
 
-         function shoesInTabClicked(clicked_shoes) {
+          function shoesInTabClicked(clicked_shoes) {
           var shoesTab_img = document.getElementById("shoesTab").getElementsByTagName('img');
           
           for (let i = 0; i < shoesTab_img.length; i++) {
@@ -287,7 +287,7 @@
           outfit_bottom.src = shoesTab_clicked.src;
          }
 
-         function dropdownHeadClicked() {
+          function dropdownHeadClicked() {
            var hatBox = document.getElementById('hatImg');
            var checkBox = document.getElementById('headCheck')
            if (checkBox.checked) {
@@ -298,14 +298,45 @@
            }
          }
 
-         function dropdownTopClicked() {
+          function dropdownTopClicked() {
            var topBox = document.getElementById('topImg');
-           var checkBox = document.getElementById('topCheck')
+           var checkBox = document.getElementById('topCheck');
            if (checkBox.checked) {
-            topBox.style.visibility = 'visible'
+            topBox.style.visibility = 'visible';
            }
            else {
-            topBox.style.visibility = 'hidden'
+            topBox.style.visibility = 'hidden';
+           }
+         }
+         
+         function dropdownAccessoryClicked() {
+           var accessoryBox = document.getElementById('accessoryImg');
+           var checkBox = document.getElementById('accessoryCheck');
+           if (checkBox.checked) {
+            accessoryBox.style.visibility = 'visible';
+           }
+           else {
+            accessoryBox.style.visibility = 'hidden';
+           }
+         }
+         function dropdownBottomClicked() {
+           var bottomBox = document.getElementById('bottomImg');
+           var checkBox = document.getElementById('bottomCheck');
+           if (checkBox.checked) {
+            bottomBox.style.visibility = 'visible';
+           }
+           else {
+            bottomBox.style.visibility = 'hidden';
+           }
+         }
+         function dropdownShoesClicked() {
+           var shoesBox = document.getElementById('shoesImg');
+           var checkBox = document.getElementById('shoesCheck');
+           if (checkBox.checked) {
+            shoesBox.style.visibility = 'visible';
+           }
+           else {
+            shoesBox.style.visibility = 'hidden';
            }
          }
 

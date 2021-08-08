@@ -45,7 +45,8 @@
     border-width: 5px;
     top: 0%;
     height: 90%;
-    padding: 20px;
+    padding: 1%;
+    padding-top: 10%;
     right: 0%;
     width: 25%;
     bottom: 0%;
@@ -72,26 +73,6 @@
     position: absolute;
     left: 40%;
 }
-/*
-.hide {
-    visibility: hidden;
-}
-
-.top {
-    visibility: hidden;
-}
-
-.bottom {
-    visibility: hidden;
-}
-
-.accessory {
-    visibility: hidden;
-}
-
-.shoes {
-    visibility: hidden;
-} */
 
 .hat img {
     width: 100px;
@@ -106,12 +87,14 @@
     width: 100px;
     border-color: #D4C7BE;
     border-radius: 6px;
+    visibility: hidden;
 }
 
 .bottom img{
     width: 120px;
     border-color: #D4C7BE;
     border-radius: 6px;
+    visibility: hidden;
 }
 
 .accessory {
@@ -126,6 +109,7 @@
     width: 200px;
     border-color: #D4C7BE;
     border-radius: 6px;
+    visibility: hidden;
 }
 
 .shoes img {
@@ -133,6 +117,7 @@
     margin-bottom: -50px;
     border-color: #D4C7BE;
     border-radius: 6px;
+    visibility: hidden;
 }
 
 
@@ -168,21 +153,40 @@
 #hatTab img {
     width: 200px;
     margin: 20px;
-    border-color: #D4C7BE;
+    border-color: #b8ada5;
     border-radius: 6px;
+    border-width: 6px;
     border-style: none;
 }
 
 #topTab img {
     width: 200px;
     margin-top: 20px;
-    border-color: #D4C7BE;
+    border-color: #b8ada5;
+    border-width: 6px;
     border-radius: 6px;
     
 }
 #bottomTab img {
     width: 200px;
     margin-top: 20px;
-    border-color: #D4C7BE;
+    border-color: #b8ada5;
+    border-width: 6px;
     border-radius: 6px;
+}
+
+#accessoryTab img {
+    width: 200px;
+    margin-top: 20px;
+    border-color: #b8ada5;
+    border-width: 6px;
+    border-radius: 6px;
+}
+
+#shoesTab img {
+    width: 200px;
+    margin-top: 20px;
+    border-color: #b8ada5;
+    border-radius: 6px;
+    border-width: 6px;
 }
