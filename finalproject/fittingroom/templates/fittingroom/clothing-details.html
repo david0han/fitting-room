@@ -5,6 +5,7 @@
     <head>
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/pre-select-styles.css' %}" />
       
       <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 
@@ -13,13 +14,23 @@
 
     <body>
       <div id="main-content" class="d-flex flex-column">
-        <div id="title-box" class="d-flex flex-column">
-          <h1>Fitting Room</h1>
-        </div>
-        <div id="drop-flex" class="d-flex flex-column">
-          <h2>Choose your aesthetic</h2>
-          <div class="dropdown">
-            <img src= "{% static 'images/down-arrow.svg' %}">
+        <h3>Clothing Details</h3>
+        <!--  -->
+        <div class="outfit-holder d-flex flex-column">
+          <div class="hat">
+            <img src="{% static 'images/Untitled-9.png' %}">
+          </div>
+          <div class="top">
+            <img src="{% static 'images/Untitled.png' %}">
+          </div>
+          <div class="bottom">
+        
+          </div> 
+          <div class="accessory">
+            <img src="{% static 'images/Untitled-6.png' %}">
+          </div> 
+          <div class="shoes">
+            <img src="{% static 'images/Untitled-13.png' %}">  
           </div>
         </div>
       </div>
@@ -27,20 +38,7 @@
       <!-- <label for="username">Name:</label>
       <input type="text" id="username"> -->
 
-      <div class="outfit-holder d-flex flex-column">
-        <div class="hat">
-          <img src="{% static 'images/Untitled-9.png' %}">
-        </div>
-        <div class="one-piece">
-          <img src="{% static 'images/Untitled.png' %}">
-        </div>
-        <div class="wrist-piece">
-          <img src="{% static 'images/Untitled-6.png' %}">
-        </div> 
-        <div class="shoes">
-          <img src="{% static 'images/Untitled-13.png' %}">  
-        </div>
-      </div>
+      
 
       <a href="/fittingroom/room" class="btn finButton">
         Share!
@@ -56,21 +54,29 @@
       // var uid = Date.now() % 10000;
 
       function submitCard() {
-          var clothes = {
-            "hat": document.getElementById("hat").src,
-            "top": document.getElementById("top").src,
-            "bottom": document.getElementById("bottom").src,
-            "accessory": document.getElementById("accessory").src,
-            "shoes": document.getElementById("shoes").src
-          }
+        var mainDiv = document.getElementById('main-content').getElementsByClassName('outfit-holder');
 
-          var card = {
-              "type": "card",
-              "uid": document.getElementById("username").value,
-              "clothes": clothes,
-              "newCard": true
-          };
-          socket.send(JSON.stringify(card));
+        var hat = mainDiv[0].children[0].children[0].src;
+        var top = mainDiv[0].children[0].children[1].src;
+        var bottom = mainDiv[0].children[0].children[2].src;
+        var accessory = mainDiv[0].children[0].children[3].src;
+        var shoes = mainDiv[0].children[0].children[4].src;
+
+        var clothes = {
+          "hat":hat,
+          "top": top,
+          "bottom": bottom,
+          "accessory": accessory,
+          "shoes": shoes
+        }
+
+        var card = {
+            "type": "card",
+            "uid": document.getElementById("username").value,
+            "clothes": clothes,
+            "newCard": true
+        };
+        socket.send(JSON.stringify(card));
          
       }
 
