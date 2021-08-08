@@ -5,6 +5,7 @@
     <head>
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/pre-select-styles.css' %}" />
       <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 
       <style>
@@ -84,26 +85,42 @@
 
 
     <body>
+      <div id="main-content" class="d-flex flex-row scrollmenu">
+        <div class="outfit-holder d-flex flex-column">
+          <div class="hat">
+            <img src="{% static 'images/Untitled-9.png' %}">
+          </div>
+          <div class="one-piece">
+            <img src="{% static 'images/Untitled.png' %}">
+          </div>
+          <div class="wrist-piece">
+            <img src="{% static 'images/Untitled-6.png' %}">
+          </div> 
+          <div class="shoes">
+            <img src="{% static 'images/Untitled-13.png' %}">  
+          </div>                 
+        </div>
+      </div>
       <div id="main-content" class="d-flex flex-column users">
         <div id = "chatbutt">
           Chat
         </div>
-      </div>
-      <div id = "chatbox">
-        <div id = "user">
-          <label for="name">Name:</label>
-          <input type="text" id="name" required>
-        </div>
-        
-        <div id = "chat"></div>
-        <div id = "chatinput">
-          <input type="text" id="msg">
-          <div class = "butt">
-              SEND
+        <div id = "chatbox">
+          <div id = "user">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+          </div>
+          
+          <div id = "chat"></div>
+          <div id = "chatinput">
+            <input type="text" id="msg">
+            <div class = "butt">
+                SEND
+            </div>
           </div>
         </div>
-        
       </div>
+      
       
 
       <div class="container-flex">
