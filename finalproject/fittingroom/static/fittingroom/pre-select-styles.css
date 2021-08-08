@@ -1,5 +1,5 @@
 .outfit-holder {
-    min-width: 237px;
+    min-width: 275px;
     height: 468px;
     border: 10px solid #D4C7BE;
     align-items: center;
@@ -28,18 +28,24 @@ h3 {
 /* Img height/width styling */
 /** will need to reajust for real imgs :')) **/
 .hat img {
-    width: 200px;
-    margin-top: -100px;
-    margin-bottom: -100px !important;
+    width: 75px;
+    margin-top: -50px;
+    /* margin-bottom: -100px !important; */
 }
 
 .top img {
+    width: 100px;
+    /* margin-bottom: -50px; */
+}
+
+.one-piece img {
     width: 300px;
     margin-bottom: -50px;
 }
 
-.bottom {
-
+.bottom img{
+    width: 150px;
+    /* margin-bottom: -50px; */
 }
 
 .accessory {
@@ -49,12 +55,12 @@ h3 {
 .accessory img {
     position: absolute;
     top: -200px;
-    right: -170px;
-    width: 200px;
+    right: -125px;
+    width: 100px;
 }
 
 .shoes img {
-    width: 100px;
+    width: 80px;
     margin-bottom: -50px;
 }
 
