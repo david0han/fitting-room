@@ -102,7 +102,7 @@
         </div>                 
       </div>
 
-        <a class="btn finButton" href="room" role="button" onClick="bypassWarning()">
+        <a id="finish" class="btn finButton" role="button" onClick="bypassWarning();urlClothesSrc();">
             Finish!
         </a>   
       </div>
@@ -369,7 +369,47 @@
             shoesBox.style.visibility = 'hidden';
            }
          }
-        
+
+         function urlClothesSrc() {
+          var url = window.location.origin + '/fittingroom/clothing-details';
+          var startString = 'http://localhost:8000/static/images/'
+          var hat = document.getElementById("hatImg").src;
+          var top = document.getElementById("topImg").src;
+          var bottom = document.getElementById("bottomImg").src;
+          var accessory = document.getElementById("accessoryImg").src;
+          var shoes = document.getElementById("shoesImg").src;
+          var hat_sliced = hat.slice(startString.length);
+          var top_sliced = top.slice(startString.length);
+          var bottom_sliced = bottom.slice(startString.length);
+          var accessory_sliced = accessory.slice(startString.length);
+          var shoes_sliced = shoes.slice(startString.length);
+          var hatCheck = document.getElementById('headCheck');
+          var topCheck = document.getElementById('topCheck');
+          var bottomCheck = document.getElementById('bottomCheck');
+          var accessoryCheck = document.getElementById('accessoryCheck');
+          var shoesCheck = document.getElementById('shoesCheck');
+          if (!hatCheck.checked) {
+            hat_sliced = null;
+          }
+          
+          if (!topCheck.checked) {
+            top_sliced = null;
+          }
+          
+          if (!bottomCheck.checked) {
+            bottom_sliced = null;
+          }
+
+          if (!accessoryCheck.checked) {
+            accessory_sliced = null;
+          }
+
+          if (!shoesCheck.checked) {
+            shoes_sliced = null;
+          }
+          var url_with_info = url + '?&hat=' + hat_sliced + '&top=' + top_sliced + '&bottom=' + bottom_sliced + '&accessory=' + accessory_sliced + '&shoes=' + shoes_sliced;
+          window.location.replace(url_with_info);
+         }
 
       </script>
     </body>
