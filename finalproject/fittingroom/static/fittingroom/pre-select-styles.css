@@ -1,11 +1,16 @@
 .outfit-holder {
     min-width: 275px;
     height: 468px;
-    border: 10px solid #D4C7BE;
+    border: 6px solid #846058;
+    background-color: #D1C3BE;
     align-items: center;
     justify-content: center;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.outfit-holder:hover {
+    background-color: #B59E98;
 }
 
 #main-content {
@@ -17,7 +22,7 @@ h3 {
     font-family: 'Lato', sans-serif;
     font-size: 40px;
     font-weight: 600;
-    color: #CCAE9A;
+    color: #846058;
     text-align: center;
     padding-top: 30px;
     margin-bottom: -20px;

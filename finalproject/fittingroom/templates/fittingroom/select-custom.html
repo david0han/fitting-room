@@ -9,6 +9,36 @@
 
 	    <script src="{% static '/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	    <script src="{% static '/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+
+      <!-- Warning before leaving -->
+
+      <!-- <script type="text/javascript">
+        window.onbeforeunload = confirmExit;
+        function confirmExit()
+        {
+          return "your changes will be lost if not saved.  Are you sure you want to exit this   page?";
+        }
+      </script> -->
+      <script type = "text/javascript">
+        var finish_clicked = false;
+
+        function bypassWarning() {
+          finish_clicked = true;
+        }
+
+        window.onbeforeunload = outfitDone;
+        function outfitDone() {
+          if (finish_clicked == false) {
+            return "your changes will be lost if not saved. Are you sure you want to exit this page?";
+          }
+          else {
+          return;
+        }
+      }
+
+    
+
+      </script>
     </head>
 
 
@@ -72,7 +102,7 @@
         </div>                 
       </div>
 
-        <a class="btn finButton" href="room" role="button">
+        <a class="btn finButton" href="room" role="button" onClick="bypassWarning()">
             Finish!
         </a>   
       </div>
@@ -339,6 +369,7 @@
             shoesBox.style.visibility = 'hidden';
            }
          }
+        
 
       </script>
     </body>
