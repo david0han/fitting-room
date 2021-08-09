@@ -5,44 +5,158 @@
     <head>
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
+
+      <!-- Roboto Font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+      <!-- Lato Font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
     </head>
 
     <style>
+      html {
+        border: 10px solid #846058;
+        width: 100%;
+        height: auto;
+      }
+      
+      #resources-content {
+        overflow: auto;
+      }
+
+
       .title{
         background-color: #D0B5A3;
-        color: #EAE5E1;
-        /* height: 50 px;
-        width: 100 px; */
-        font-family: Roboto;
+        height: 80px !important;
+        color: #EAE5E1 !important;
+        font-family: Roboto !important;
         font-style: Bold;
         font-size: 25px;
         text-align: center;
+        align-items: center;
+        margin-top: 50px;
+        padding-top: 5px;
+        font-weight: 600;
+      }
+
+      .description {
+        background-color: #846058;
+        color: #EAE5E1;
+        font-family: Lato;
+        margin-bottom: 50px;
+        text-align: center;
+        align-items: center;
+        font-size: 20px;
+        padding: 5px;
 
       }
+
+      .image {
+        border: 5px solid #846058;
+        width: 283px;
+
+      }
+
+        
+
     </style>
 
     <body>
       <div id="resources-content" class="container">
         <div id="resources-titles" class="row">
-          <div class = "flex-column">
-              <span class = "title">Recommended Brands<span>
-              <div class = "title" > Brand1</div>
-              <div class = "title"> Brand2</div>
+          <div class = "col-4">
+              <p class = "title"> Recommended <br> Brands<p>
+              <a href = "https://www.ethicalapparel.org/">
+                <div class = "description" > </div>
+                <img class = "image" src = "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.6435-9/71290975_3091762580895116_3728414814205116416_n.jpg?_nc_cat=107&ccb=1-4&_nc_sid=09cbfe&_nc_ohc=nKCP78ZH4RkAX-mEkGD&_nc_ht=scontent-sjc3-1.xx&oh=5df6c1ac3282bb09f4114f063b24f9e1&oe=61363D25">
+                <div class = "description"> EthiCAL Apparel @ UC Berkeley: A student-run social enterprise that provides affordable, high-quality screen printing and free design services on clothing. Their mission is to embolden students, entrepreneurs, and local organizations one shirt at a time. </div>
+              </a>
+              <a href = "https://www.ethicalapparel.org/">
+                <div class = "description" > </div>
+                <img class = "image"  src = "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.18169-9/19510660_1698241673813576_2914915261691640857_n.png?_nc_cat=1&ccb=1-4&_nc_sid=09cbfe&_nc_ohc=Vopq_-DN1lYAX8X4l2Z&_nc_ht=scontent-sjc3-1.xx&oh=4101bb5472ad3a2fb38a59ccc564f372&oe=613885EB">
+                <div class = "description"> Girlfriend Collective: Recycle, Reuse, ReGirlfriend. An ethically made, eco-friendly clothing brand on a mission to make “sustainable activewear for people who care – care about other people, care about how their clothes are made, and care about making an impact through their purchasing power. </div>
+              </a>
+              <a href = "https://www.adidas.com/us/futurecraft-allbirds">
+                <div class = "description" > </div>
+                <img class = "image"  src = "https://www.nicekicks.com/files/2021/05/Allbirds-adidas-Futurecraft-Footprint-00.jpg">
+                <div class = "description"> Allbirds x Adidas Collaboration: The new Futurecraft.Footprint is a high-performance running shoe with a far smaller environmental impact; by the companies’ estimation, its manufacturing process emits a remarkably low 6.5 pounds of carbon dioxide. </div>
+              </a>
+              <a href = "https://thesourcezero.com/">
+                <div class = "description" > </div>
+                <img class = "image" src = "https://secureservercdn.net/166.62.110.232/lga.a63.myftpupload.com/wp-content/uploads/2020/02/The-Source-Zero-Logo-retina-black.png">
+                <div class = "description"> The Source Zero: A zero waste shop to provide a resource for people who are working towards limiting their plastic footprint. We bring together women’s small businesses whose mission is in line with ours and provide a judgment-free education zone on how we can alter one thing at a time to keep our plastic use minimal. </div>
+              </a>
           </div>
-          <div class = "flex-column"> 
-              <span class = "title">Recommended Products</span>
-              <div class = "title"> Product1</div>
-              <div class = "title"> Product2</div>
+          <div class = "col-4">
+            <p class = "title">Recommended <br> Products<p>
+              <a href = "https://www.ethicalapparel.org/">
+                <div class = "description" > </div>
+                <img class = "image" src = "https://c1.neweggimages.com/ProductImageCompressAll1280/A2N0_131674280894027240tfDjrOSlsx.jpg
+                ">
+                <div class = "description"> Snug Pad's reusable wool dryer balls reduce wrinkles, static, and prevent lint piling! </div>
+              </a>
+              <a href = "https://www.girlfriend.com/collections/bras-undies/products/shell-high-rise-thong">
+                <div class = "description" > </div>
+                <img class = "image"  src = "https://cdn.shopify.com/s/files/1/0019/2217/0943/products/PDP_HighWaisted_Thong_Shell5_1200x.jpg?v=1611267477">
+                <div class = "description"> Girlfriend Collective's Underwear is made with 80% recycled plastic bottles (RPET), 20% spandex. Recyclable with ReGirlfriend. </div>
+              </a>
+              <a href = "https://www.allbirds.com/products/womens-tree-pipers-kaikoura-white">
+                <div class = "description" > </div>
+                <img class = "image" src = "https://lh3.googleusercontent.com/48FJoG4wGgN-iIEppli8C-GiJT7aW2rL_8U0NY3ysaTtiGYYi_My2thN0TaSaP0n9TpYjHhu8lk7A-DPyAlOzs0hHL6xfuO8x7G64PjW6pVMZEKN6sCyecqzr-m2F5nqei4aZuHR-g=w2400">
+                <div class = "description"> Allbirds's Tree Pipers - Renewable Materials, Machine Washable, Minimizes Odor. All-day comfort. Everyday style. With a classic low top made from breezy eucalyptus tree fiber, their new Tree Piper is the summer sneaker your outfits have been waiting for. </div>
+              </a>
+              <a href = "https://thesourcezero.com/product/bamboo-facial-rounds/">
+                <div class = "description" > </div>
+                <img class = "image"  src = "https://secureservercdn.net/166.62.110.232/lga.a63.myftpupload.com/wp-content/uploads/2020/04/Bamboo-Facial-Rounds-5-scaled.jpg?time=1628472108">
+                <div class = "description"> The Source Zero's Mishka Hands Bamboo Facial Rounds replace disposable cotton rounds. They are made with bamboo. Use for makeup remover of choice, wash in laundry machine, and air dry. </div>
+              </a>
+              <a href = "https://thesourcezero.com/product/bamboo-facial-rounds/">
+                <div class = "description" > </div>
+                <img class = "image"  src = "https://secureservercdn.net/166.62.110.232/lga.a63.myftpupload.com/wp-content/uploads/2020/04/Bamboo-Facial-Rounds-5-scaled.jpg?time=1628472108">
+                <div class = "description"> The Source Zero's Mishka Hands Bamboo Facial Rounds replace disposable cotton rounds. They are made with bamboo. Use for makeup remover of choice, wash in laundry machine, and air dry. </div>
+              </a>
           </div>
-          <div class = "flex-column"> 
-            <span class = "title">Learn More About Fashion</span>
-            <div class = "title"> Learn1</div>
-            <div class = "title"> Learn2</div>
-            </div>
-       </div>
+          <div class = "col-4">
+            <p class = "title">Learn More About <br> Fast Fashion<p>
+              <a href = "https://goodonyou.eco/what-is-fast-fashion/">
+                <div class = "description" > </div>
+                <img class = "image" src = "https://goodonyou.eco/wp-content/uploads/2020/05/whatisfflead.jpg">
+                <div class = "description"> Good For You - What is Fast Fashion </div>
+              </a>
+              <a href = "https://www.thegoodtrade.com/features/what-is-fast-fashion">
+                <div class = "description" > </div>
+                <img class = "image"  src = "https://images.squarespace-cdn.com/content/v1/5442b6cce4b0cf00d1a3bef2/1611189314837-9NWR8U9NR3I0XN4LVPKE/what%2Bis%2Bfast%2Bfashion.jpg?format=1000w">
+                <div class = "description"> The Good Trade: What is Fast Fashion, Anyway?
+                </div>
+              </a>
+              <a href = "https://www.nytimes.com/2019/09/03/books/review/how-fast-fashion-is-destroying-the-planet.html">
+                <div class = "description" > </div>
+                <img class = "image" src = "https://static01.nyt.com/images/2019/10/13/books/review/schlossberg01/merlin_70552169_4c9a0a6c-f2cd-47b8-a8a7-e20811bd7848-superJumbo.jpg?quality=90&auto=webp">
+                <div class = "description"> NY Times: How Fast Fashion is Destroying the Planet </div>
+              </a>
+              <a href = "https://gasp-pgh.org/2020/07/28/clothes-climate-change-how-a-fashion-choice-change-could-lead-to-better-air-quality/">
+                <div class = "description" > </div>
+                <img class = "image"  src = "https://gasp-pgh.org/wp-content/uploads/Dualitee-Apparel-2-300x300.png">
+                <div class = "description"> Gasp: Clothes & Climate Change: How a Fashion Choice Change Could Lead to Better Air Quality
+                </div>
+              </a>
+              <a href = "https://www.instagram.com/reel/CNnX8MqJa9e/?utm_source=ig_web_copy_link">
+                <div class = "description" > </div>
+                <img class = "image"  src = "https://lh3.googleusercontent.com/VvXHm6dshkhAGt-G-hNcyn2VP67QKFqzVRs6nWFpkKns9D1-vpaqDFQamNGpxD1oop94jnRg-96y-70UT1hAjGyd129uGAG4a9bnraV30mdYcK_2kDDxZIrkhunxHQe8Xy5EicAwMg=w2400">
+                <div class = "description"> Learn how to make a handbag from Cactus leather. Follow @greengirlleah on Instagram for more tips on reducing fast fashion through sustinable living practices.</div>
+              </a>
+              <a href = "https://www.worldbank.org/en/news/feature/2019/09/23/costo-moda-medio-ambiente">
+                <div class = "description" > </div>
+                <img class = "image"  src = "https://www.worldbank.org/content/dam/photos/780x439/2019/sep-1/ModaLAC780.jpg">
+                <div class = "description"> The World Bank: How Much Do Our Wardrobes Cost to the Environment?
+                </div>
+              </a>
+          </div>
+        </div>
       </div>
-       
-       
 
       <div class="container-flex">
         <div class = "d-flex flex-row navBar">
@@ -66,6 +180,8 @@
           </div>
         </div>
       </div>
+       
+  
 
     </body>
 </html>
