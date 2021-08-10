@@ -38,6 +38,21 @@
                 <!-- <form action="select-pre" method="get"> -->
                   
                   <label class="container">
+                      <p>Athleisure</p>
+                      <input id="athleisure" type="checkbox">
+                      <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                      <p>Streetwear</p>
+                      <input id="streetwear" type="checkbox">
+                      <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                      <p>Vintage</p>
+                      <input id="vintage" type="checkbox">
+                      <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
                     <p>Academia</p>
                     <input id="academia" type="checkbox">
                     <span class="checkmark"></span>
@@ -48,13 +63,18 @@
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">
-                    <p>Athleisure</p>
-                    <input id="athleisure" type="checkbox">
+                    <p>Business Casual</p>
+                    <input  id="business-casual" type="checkbox">
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">
-                    <p>Business Casual</p>
-                    <input  id="business-casual" type="checkbox">
+                    <p>Biker</p>
+                    <input id="tomboy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Boho</p>
+                    <input id="tomboy" type="checkbox">
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">
@@ -78,8 +98,18 @@
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">
+                    <p>Cozy</p>
+                    <input id="tomboy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
                     <p>E-Boy/E-Girl/E-Kid</p>
                     <input id="e-kid" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Farmer</p>
+                    <input id="tomboy" type="checkbox">
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">
@@ -118,8 +148,18 @@
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">
+                    <p>Party</p>
+                    <input id="tomboy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
                     <p>Punk</p>
                     <input id="punk" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">
+                    <p>Rave</p>
+                    <input id="tomboy" type="checkbox">
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">
@@ -133,8 +173,8 @@
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">
-                    <p>Streetwear</p>
-                    <input id="streetwear" type="checkbox">
+                    <p>Tie-Dye</p>
+                    <input id="tomboy" type="checkbox">
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">
@@ -147,23 +187,11 @@
                     <input id="vacation" type="checkbox">
                     <span class="checkmark"></span>
                   </label>
-                  <label class="container">
-                    <p>Vintage</p>
-                    <input id="vintage" type="checkbox">
-                    <span class="checkmark"></span>
-                  </label>
                 <!-- </form> -->
               </div>
 
 
               <div class="palette-holder">
-                <div id="light-brown" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
-                  <div id="p1-c1" class="circle"></div>
-                  <div id="p1-c2" class="circle"></div>
-                  <div id="p1-c3" class="circle"></div>
-                  <div id="p1-c4" class="circle"></div>
-                  <div id="p1-c5" class="circle"></div>
-                </div>
                 <div id="earthy" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
                   <div id="p2-c1" class="circle"></div>
                   <div id="p2-c2" class="circle"></div>
@@ -171,19 +199,26 @@
                   <div id="p2-c4" class="circle"></div>
                   <div id="p2-c5" class="circle"></div>
                 </div>
-                <div id="blue" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
-                  <div id="p3-c1" class="circle"></div>
-                  <div id="p3-c2" class="circle"></div>
-                  <div id="p3-c3" class="circle"></div>
-                  <div id="p3-c4" class="circle"></div>
-                  <div id="p3-c5" class="circle"></div>
-                </div>
                 <div id="navy-blue" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
                   <div id="p4-c1" class="circle"></div>
                   <div id="p4-c2" class="circle"></div>
                   <div id="p4-c3" class="circle"></div>
                   <div id="p4-c4" class="circle"></div>
                   <div id="p4-c5" class="circle"></div>
+                </div>
+                <div id="light-brown" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p1-c1" class="circle"></div>
+                  <div id="p1-c2" class="circle"></div>
+                  <div id="p1-c3" class="circle"></div>
+                  <div id="p1-c4" class="circle"></div>
+                  <div id="p1-c5" class="circle"></div>
+                </div>
+                <div id="blue" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p3-c1" class="circle"></div>
+                  <div id="p3-c2" class="circle"></div>
+                  <div id="p3-c3" class="circle"></div>
+                  <div id="p3-c4" class="circle"></div>
+                  <div id="p3-c5" class="circle"></div>
                 </div>
                 <div id="pastel" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
                   <div id="p5-c1" class="circle"></div>
@@ -241,6 +276,63 @@
                   <div id="p12-c4" class="circle"></div>
                   <div id="p12-c5" class="circle"></div>
                 </div>
+                <div id="pink-grey" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p13-c1" class="circle"></div>
+                  <div id="p13-c2" class="circle"></div>
+                  <div id="p13-c3" class="circle"></div>
+                  <div id="p13-c4" class="circle"></div>
+                  <div id="p13-c5" class="circle"></div>
+                </div>
+                <div id="purple-sunset" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p14-c1" class="circle"></div>
+                  <div id="p14-c2" class="circle"></div>
+                  <div id="p14-c3" class="circle"></div>
+                  <div id="p14-c4" class="circle"></div>
+                  <div id="p14-c5" class="circle"></div>
+                </div>
+                <div id="dark-colors" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p15-c1" class="circle"></div>
+                  <div id="p15-c2" class="circle"></div>
+                  <div id="p15-c3" class="circle"></div>
+                  <div id="p15-c4" class="circle"></div>
+                  <div id="p15-c5" class="circle"></div>
+                </div>
+                <div id="red-blue" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p16-c1" class="circle"></div>
+                  <div id="p16-c2" class="circle"></div>
+                  <div id="p16-c3" class="circle"></div>
+                  <div id="p16-c4" class="circle"></div>
+                  <div id="p16-c5" class="circle"></div>
+                </div>
+                <div id="modern" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p17-c1" class="circle"></div>
+                  <div id="p17-c2" class="circle"></div>
+                  <div id="p17-c3" class="circle"></div>
+                  <div id="p17-c4" class="circle"></div>
+                  <div id="p17-c5" class="circle"></div>
+                </div>
+                <div id="yellow-blue" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p18-c1" class="circle"></div>
+                  <div id="p18-c2" class="circle"></div>
+                  <div id="p18-c3" class="circle"></div>
+                  <div id="p18-c4" class="circle"></div>
+                  <div id="p18-c5" class="circle"></div>
+                </div>
+                <div id="beach" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p19-c1" class="circle"></div>
+                  <div id="p19-c2" class="circle"></div>
+                  <div id="p19-c3" class="circle"></div>
+                  <div id="p19-c4" class="circle"></div>
+                  <div id="p19-c5" class="circle"></div>
+                </div>
+                <div id="fall" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
+                  <div id="p20-c1" class="circle"></div>
+                  <div id="p20-c2" class="circle"></div>
+                  <div id="p20-c3" class="circle"></div>
+                  <div id="p20-c4" class="circle"></div>
+                  <div id="p20-c5" class="circle"></div>
+                </div>
+
               </div>
             </div>
             <!-- <input href="select-pre" class="submit-button" type="submit" value="Submit"> -->
