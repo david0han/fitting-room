@@ -99,11 +99,34 @@
         var bottom = clothes.get('bottom');
         var accessory = clothes.get('accessory');
         var shoes = clothes.get('shoes');
-        document.getElementById("hatImg").src = formatSource(hat);
-        document.getElementById("topImg").src = formatSource(top);
-        document.getElementById("bottomImg").src = formatSource(bottom);
-        document.getElementById("accessoryImg").src = formatSource(accessory);
-        document.getElementById("shoesImg").src = formatSource(shoes);
+
+        if (hat == "none") {
+          document.getElementById('hatImg').style.visibility = "hidden";
+        } else {
+          document.getElementById("hatImg").src = formatSource(hat);
+        }
+        if (top == "none") {
+          document.getElementById('topImg').style.visibility = "hidden";
+        } else {
+          document.getElementById("topImg").src = formatSource(top);
+        }
+        if (bottom == "none") {
+          document.getElementById('bottomImg').style.visibility = "hidden";
+        } else {
+          document.getElementById("bottomImg").src = formatSource(bottom);
+        }
+        if (accessory == 'none') {
+          console.log(accessory);
+          document.getElementById('accessoryImg').style.visibility = "hidden";
+        } else {
+          console.log(accessory);
+          document.getElementById("accessoryImg").src = formatSource(accessory);
+        }
+        if (shoes == "none") {
+          document.getElementById('shoesImg').style.visibility = "hidden";
+        } else {
+          document.getElementById("shoesImg").src = formatSource(shoes);
+        }       
       }
 
       function formatSource(img) {
@@ -133,6 +156,7 @@
         margin-bottom: -50px !important;
         border-color: #D4C7BE;
         border-radius: 6px;
+        visibility: visible;
     
     }
 
@@ -141,6 +165,7 @@
         border-color: #D4C7BE;
         border-radius: 6px;
         margin-bottom: 10%;
+        visibility: visible;
         
     }
 
@@ -149,6 +174,7 @@
         border-color: #D4C7BE;
         border-radius: 6px;
         margin-bottom: 5%;
+        visibility: visible;
       
     }
 
@@ -159,6 +185,7 @@
         width: 200px;
         border-color: #D4C7BE;
         border-radius: 6px;
+        visibility: visible;
     }
 
     .shoes img {
@@ -166,6 +193,7 @@
         border-color: #D4C7BE;
         border-radius: 6px;
         margin-top: -20%;
+        visibility: visible;
     }
     </style>
 
