@@ -1,4 +1,5 @@
 /* curtain things */
+
 #curtains {
     position: absolute;
     top: 0;
@@ -15,11 +16,11 @@
 }
 
 #left-curtain {
-    animation: moveLeft 1s ease-in 0.70s forwards;
+    animation: moveLeft 1.5s ease-in 0.70s forwards;
 }
  
 #right-curtain {
-    animation: moveRight 1s ease-in 0.70s forwards;
+    animation: moveRight 1.5s ease-in 0.70s forwards;
 }
 
 @keyframes moveLeft {
@@ -29,11 +30,18 @@
         transform: translateX(0px);
     }
 
+    80% {
+        opacity: 0%;
+        /* visibility: hidden; */
+        display: none;
+        transform: translateX(-450px);        
+    }
+
     100% {
         opacity: 0%;
         /* visibility: hidden; */
         display: none;
-        transform: translateX(-450px);
+        transform: translateX(450px);        
     }
 }
 
@@ -44,11 +52,18 @@
         transform: translateX(0px);
     }
 
-    100% {
+    80% {
         opacity: 0%;
         /* visibility: hidden; */
         display: none;
         transform: translateX(450px);        
+    }
+
+    100% {
+        opacity: 0%;
+        /* visibility: hidden; */
+        display: none;
+        transform: translateX(-450px);        
     }
 }
 

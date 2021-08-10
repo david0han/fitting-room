@@ -1,6 +1,7 @@
 .outfit-holder {
     min-width: 275px;
-    height: 468px;
+    height: 500px;
+    /* height: 468px; */
     border: 6px solid #846058;
     background-color: #D1C3BE;
     align-items: center;
