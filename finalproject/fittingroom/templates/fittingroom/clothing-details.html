@@ -6,10 +6,34 @@
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/vendor/bootstrap/css/bootstrap.min.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/pre-select-styles.css' %}" />
-      
+      <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/clothing-details-style.css' %}" />
+
       <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 
+      <script>
+        function titleType() {
+          var urlParams = new URLSearchParams(window.location.href);
+          var titles = urlParams.getAll('themes');
+          
+          var divDetailsBox = document.getElementsByClassName('clothing-type');
+        
+          var titleString = "";
+          for(var i = 0; i < titles.length; i++) {
+            titleString += String(titles[i]) + " ";
+          }
+
+          var text = document.createTextNode(titleString);
+          
+          // divDetailsBox.appendChild(text); 
+          for(var i = 0; i < divDetailsBox.length; i++) {
+            divDetailsBox[i].appendChild(text); 
+          }
+        }
+      </script>
+
     </head>
+
+
 
 
     <body>
@@ -17,19 +41,73 @@
       <div id="main-content" class="d-flex flex-column">
         <div class="outfit-holder d-flex flex-column">
           <div class="hat">
-            <img id='hatImg' src="{% static 'images/fandora.jpeg' %}">
+            <div class = "hoverdetails">
+              <img id='hatImg' src="{% static 'images/athleisure/earthy/hat/1.png' %}"> 
+
+              <div class = "detailsbox">
+                  <div class = "type clothing-type"> </div>
+                  <script type="text/javascript">
+                    titleType();
+                  </script>
+                  <div class = "bold"> Price:</div> <div class = "text"> $40 </div>
+                  <br>
+                  <div class = "bold"> Materials:</div> <div class = "text"> 90% cotton, 10% polyester </div>
+                  <div class = "line"> </div>
+              </div>
+            </div>
           </div>
+
+
           <div class="top">
-            <img id='topImg' src="{% static 'images/Untitled.png' %}">
+            <div class = "hoverdetails">
+              <img id='topImg' src="{% static 'images/Untitled.png' %}">
+
+              <div class = "detailsbox">
+                <div class = "type clothing-type"> </div>
+                  <script type="text/javascript">
+                    titleType();
+                  </script>
+                  <div class = "bold"> Price:</div> <div class = "text"> $40 </div>
+                  <br>
+                  <div class = "bold"> Materials:</div> <div class = "text"> 90% cotton, 10% polyester </div>
+                  <div class = "line"> </div>
+              </div>
+            </div>
           </div>
+
+
           <div class="bottom">
-            <img id='bottomImg' src="{% static 'images/Untitled.png' %}">
+            <div class = "hoverdetails">
+              <img id='bottomImg' src="{% static 'images/Untitled.png' %}">
+              <div class = "detailsbox">
+                <div class = "type clothing-type"> </div>
+                  <script type="text/javascript">
+                    titleType();
+                  </script>
+                  <div class = "bold"> Price:</div> <div class = "text"> $40 </div>
+                  <br>
+                  <div class = "bold"> Materials:</div> <div class = "text"> 90% cotton, 10% polyester </div>
+                  <div class = "line"> </div>
+              </div>
+            </div>
           </div> 
           <div class="accessory">
-            <img id='accessoryImg' src="{% static 'images/Untitled-6.png' %}">
+              <img id='accessoryImg' src="{% static 'images/Untitled-6.png' %}">
           </div> 
           <div class="shoes">
-            <img id='shoesImg' src="{% static 'images/Untitled-13.png' %}">
+            <div class = "hoverdetails">
+              <img id='shoesImg' src="{% static 'images/Untitled-13.png' %}">
+              <div class = "detailsbox">
+                <div class = "type clothing-type"> </div>
+                  <script type="text/javascript">
+                    titleType();
+                  </script>
+                  <div class = "bold"> Price:</div> <div class = "text"> $40 </div>
+                  <br>
+                  <div class = "bold"> Materials:</div> <div class = "text"> 90% cotton, 10% polyester </div>
+                  <div class = "line"> </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
