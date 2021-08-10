@@ -1,0 +1,52 @@
+.hoverdetails {
+    /* width: 300px; */
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+}
+
+.hoverdetails:hover .detailsbox {
+    width: 300px;
+    visibility:visible;
+    /* position: absolute; */
+}
+
+.detailsbox {
+    position:absolute;
+    visibility: hidden;
+    right: 380px;
+    transform:translateY(-100px);
+    background-color: #EAE5E1;
+    border: 5px solid #846058;
+}
+
+.hoverdetails:hover .type {
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 700;
+    color: #846058
+}
+
+.hoverdetails:hover .bold {
+    font-family: Roboto;
+    font-weight: 700;
+    color: #846058;
+}
+
+.hoverdetails:hover .text {
+    font-family: Roboto;
+    color: #846058;
+}
+
+.bold, .text {
+    display: inline-block;
+}
+
+.line  {
+    background-color: #846058;
+    position: absolute;
+    height: 5px;
+    width: 160px;
+    top: 50%;
+    left: 290px;
+}
