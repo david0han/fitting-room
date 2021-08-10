@@ -10,15 +10,17 @@
 	    <script src="{% static '/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	    <script src="{% static '/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
 
-      <!-- Warning before leaving -->
 
-      <!-- <script type="text/javascript">
-        window.onbeforeunload = confirmExit;
-        function confirmExit()
-        {
-          return "your changes will be lost if not saved.  Are you sure you want to exit this   page?";
-        }
-      </script> -->
+      <!-- Roboto Font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+      <!-- Lato Font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+
+      <!-- Warning before leaving -->
       <script type = "text/javascript">
         var finish_clicked = false;
 
@@ -374,7 +376,7 @@
          }
 
          function urlClothesSrc() {
-          var url = window.location.origin + '/fittingroom/clothing-details' + 
+          var url = window.location.origin + '/fittingroom/clothing-details?' + 
           window.location.href.slice(window.location.origin.length + 26);
           var startString = 'http://localhost:8000/static/images/'
           var hat = document.getElementById("hatImg").src;

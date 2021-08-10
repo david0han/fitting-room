@@ -19,11 +19,12 @@
 }
 
 .finButton {
-    background-color: #D0B5A3;
-    color: #EAE5E1;
+    background-color: #846058;
+    color: #EAE5E1 !important;
     position: fixed;
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Lato';
+    font-weight:700;
     padding: 15px 32px;
     border: none; 
     text-align: center;
