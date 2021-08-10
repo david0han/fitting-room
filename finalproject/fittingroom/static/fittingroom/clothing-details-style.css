@@ -1,3 +1,21 @@
+.finButton {
+    background-color: #846058;
+    color: #EAE5E1 !important;
+    position: fixed;
+    font-size: 30px;
+    font-family: 'Lato';
+    font-weight:700;
+    padding: 5px 32px;
+    border: none; 
+    text-align: center;
+    left: 10%;
+    bottom: 20%;
+    width: 15%;
+    height: auto;
+    border-radius: 30px;
+    radius: 100px;
+}
+
 .hoverdetails {
     /* width: 300px; */
     width: fit-content;
