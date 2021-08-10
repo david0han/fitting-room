@@ -371,7 +371,8 @@
          }
 
          function urlClothesSrc() {
-          var url = window.location.origin + '/fittingroom/clothing-details';
+          var url = window.location.origin + '/fittingroom/clothing-details' + 
+          window.location.href.slice(window.location.origin.length + 26);
           var startString = 'http://localhost:8000/static/images/'
           var hat = document.getElementById("hatImg").src;
           var top = document.getElementById("topImg").src;
@@ -407,7 +408,8 @@
           if (!shoesCheck.checked) {
             shoes_sliced = 'none';
           }
-          var url_with_info = url + '?&hat=' + hat_sliced + '&top=' + top_sliced + '&bottom=' + bottom_sliced + '&accessory=' + accessory_sliced + '&shoes=' + shoes_sliced;
+          var url_with_info = url + '&hat=' + hat_sliced + '&top=' + top_sliced + '&bottom=' + bottom_sliced + '&accessory=' + accessory_sliced + '&shoes=' + shoes_sliced;
+          // var url_with_info = url + '?&hat=' + hat_sliced + '&top=' + top_sliced + '&bottom=' + bottom_sliced + '&accessory=' + accessory_sliced + '&shoes=' + shoes_sliced;
           window.location.replace(url_with_info);
          }
 
