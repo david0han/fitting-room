@@ -103,3 +103,26 @@ function toggleRedirect() {
     }
     return urlFirstHalf;
 }
+
+function clothesFilter() {
+    var Path, foundFiles, aFile, Path, attr, i, e, dyear;
+    var DateVal, Handle, FileDate, ReadOnlyFile;
+    var themesAndcolor = new URLSearchParams(window.location.href);
+    var themes = themesAndcolor.getAll('themes');
+    var color = themesAndcolor.get('colors');
+    var types = ['hat', 'top', 'bottom', 'accessory', 'shoes']
+    for (var i = 0; i < themes.length; i++) {
+      for (var j = 0; j == 5; j++) {
+      Path = "/static/fittingroom/images" + themes[i] + color + types[j]; //Folder where we will search for files
+      foundFiles = aqFileSystem.FindFiles(Path, "*.txt");
+      if (!strictEqual(foundFiles, null))
+      while (foundFiles.HasNext()) {
+          clothingItem = foundFiles.Next();
+          var Tab = document.getElementById(types[j] + 'Tab');
+          var imgElement = document.createElement('img');
+          imgElement.src = clothingItem;
+          hatTab.appendChild(imgElement);
+        }
+      }
+      }
+    }
