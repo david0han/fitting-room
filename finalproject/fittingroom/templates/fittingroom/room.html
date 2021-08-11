@@ -117,7 +117,7 @@
       </div>
 
       <div id="main-content" class="d-flex flex-row scrollmenu">
-        <div class="outfit-holder d-flex flex-column">
+        <!-- <div class="outfit-holder d-flex flex-column">
           <div class="hat">
             <img src="{% static 'images/Untitled-9.png' %}">
           </div>
@@ -132,7 +132,7 @@
           </div> 
           <div class="shoes">
             <img src="{% static 'images/Untitled-13.png' %}">  
-          </div>
+          </div> -->
         </div>
         
 
@@ -371,6 +371,22 @@
       imgAccessory.src = accsrc;
       imgShoes.src = shoessrc;
 
+      // if (hatsrc == "") {
+      //   imgHat.style.visibility = "hidden";
+      // }
+      // if (topsrc == "") {
+      //   imgTop.style.visibility = "hidden";
+      // }
+      // if (accsrc == "") {
+      //   imgAccessory.style.visibility = "hidden";
+      // }
+      // if (bottomsrc == "") {
+      //   imgBottom.style.visibility = "hidden";
+      // }
+      // if (shoessrc == "") {
+      //   imgShoes.style.visibility = "hidden";
+      // }
+
       shellDiv.appendChild(divHat);
       shellDiv.appendChild(divTop);
       shellDiv.appendChild(divBottom);
@@ -382,6 +398,8 @@
       divBottom.appendChild(imgBottom);
       divAccessory.appendChild(imgAccessory);
       divShoes.appendChild(imgShoes);
+
+      
     }
     </script>
 </html>
