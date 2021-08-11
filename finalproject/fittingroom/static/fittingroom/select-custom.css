@@ -25,14 +25,16 @@
     font-size: 30px;
     font-family: 'Lato';
     font-weight:700;
-    padding: 15px 32px;
+    padding: 5px 32px;
     border: none; 
     text-align: center;
     left: 10%;
-    bottom: 15%;
+    bottom: 20%;
     width: 15%;
     height: auto;
     border-radius: 30px;
+    radius: 100px;
+
 }
 
 .finButton:hover {

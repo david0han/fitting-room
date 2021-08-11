@@ -136,7 +136,7 @@ input:checked + .slider:before {
   
 /* custom */
 .on {
-    color: #EAE5E1;
+    color: #FFFFFF;
     position: relative;
     transform: translate(-50%,-50%);
     top: 50%;

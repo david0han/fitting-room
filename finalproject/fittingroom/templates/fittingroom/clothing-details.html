@@ -133,15 +133,21 @@
       function submitCard() {
         var mainDiv = document.getElementById('main-content').getElementsByClassName('outfit-holder');
 
-        var hat = mainDiv[0].children[0].children[0].src;
-        var top = mainDiv[0].children[1].children[0].src;
+        // var hat = mainDiv[0].children[0].children[0].src;
+        // var top = mainDiv[0].children[1].children[0].src;
         
-        if (mainDiv[0].children.length == 5) {
-          var bottom = mainDiv[0].children[2].children[0].src;
-        }
+        // if (mainDiv[0].children.length == 5) {
+        //   var bottom = mainDiv[0].children[2].children[0].src;
+        // }
       
-        var accessory = mainDiv[0].children[3].children[0].src;
-        var shoes = mainDiv[0].children[4].children[0].src;
+        // var accessory = mainDiv[0].children[3].children[0].src;
+        // var shoes = mainDiv[0].children[4].children[0].src;
+
+        var hat = document.getElementById("hatImg").src;
+        var top = document.getElementById("topImg").src;
+        var bottom = document.getElementById("bottomImg").src;
+        var accessory = document.getElementById("accessoryImg").src;
+        var shoes = document.getElementById("shoesImg").src;
 
         var clothes = {
           "hat":hat,
@@ -214,65 +220,5 @@
 
       receiveClothing();
     </script>
-
-    <style>
-    .outfit-holder {
-      min-width: 237px;
-      height: 468px;
-      align-items: center;
-      justify-content: center;
-      margin-left: 20px;
-      margin-right: 20px;
-      position: absolute;
-      left: 40%;
-      bottom: 20%;
-    }
-
-    .hat img {
-        width: 100px;
-        margin-top: -100px;
-        margin-bottom: -50px !important;
-        border-color: #D4C7BE;
-        border-radius: 6px;
-        visibility: visible;
-    
-    }
-
-    .top img {
-        width: 100px;
-        border-color: #D4C7BE;
-        border-radius: 6px;
-        margin-bottom: 10%;
-        visibility: visible;
-        
-    }
-
-    .bottom img{
-        width: 100px;
-        border-color: #D4C7BE;
-        border-radius: 6px;
-        margin-bottom: 5%;
-        visibility: visible;
-      
-    }
-
-    .accessory img {
-        position: absolute;
-        top: -200px;
-        right: -170px;
-        width: 200px;
-        border-color: #D4C7BE;
-        border-radius: 6px;
-        visibility: visible;
-    }
-
-    .shoes img {
-        width: 100px;
-        border-color: #D4C7BE;
-        border-radius: 6px;
-        margin-top: -20%;
-        visibility: visible;
-    }
-    </style>
 
 </html>
