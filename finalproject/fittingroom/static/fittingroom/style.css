@@ -7,19 +7,19 @@ html {
 }
 
 body {
-  background-color: #E4DCD8;
+  background-color: #EAE5E1;
 }
 
 h1 {
   font-family: 'Yeseva One', cursive;
   font-size: 100px;
-  color: #9F898E;
+  color: #846058;
 }
 
 h2 {
   font-family: 'Yeseva One', cursive;
   font-size: 48px;
-  color: #9F898E;
+  color: #846058;
   z-index: -2;
 }
 
@@ -51,7 +51,7 @@ p {
 
 .dropdown { 
   background-color: #EAE5E1;
-  border: 10px solid #D4C7BE;
+  border: 10px solid #846058;
   /* justify-content: center; */
   width: 764px;
   height: 350px;
@@ -61,7 +61,7 @@ p {
 
 .dropdownn { 
   background-color: #EAE5E1;
-  border: 10px solid #D4C7BE;
+  border: 10px solid #846058;
   /* justify-content: center; */
   width: 500px;
   height: 350px;
@@ -119,7 +119,7 @@ p {
 }
 
 .container p {
-  color: #CCAE9A;
+  color: #846058;
 }
 
 /* Checkbox Stuff 
@@ -163,7 +163,7 @@ W3 Schools: https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
   height: 25px;
   width: 25px;
   background-color: #EAE5E1;
-  border: 5px solid #CCAE9A;
+  border: 5px solid #846058;
 }
 
 /* On mouse-over, add a grey background color */
