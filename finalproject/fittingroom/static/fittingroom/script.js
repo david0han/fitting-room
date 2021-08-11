@@ -125,4 +125,31 @@ function clothesFilter() {
         }
       }
       }
-    }
+}
+
+function preSelectClothesSrc(outfitDiv) {
+    var url = window.location.origin + '/fittingroom/clothing-details?' + 
+    window.location.href.slice(window.location.origin.length + 26);
+    var startString = 'http://localhost:8000/static/images/'
+
+    var outfit = document.getElementById(outfitDiv);
+
+    var hat = outfit.children[0].children[0].src.slice(startString.length);
+    var top = outfit.children[1].children[0].src.slice(startString.length);
+    var bottom = outfit.children[2].children[0].src.slice(startString.length);
+    var accessory = outfit.children[3].children[0].src.slice(startString.length);
+    var shoes = outfit.children[4].children[0].src.slice(startString.length);
+
+
+
+    // var hat_sliced = hat.slice(startString.length);
+    // var top_sliced = top.slice(startString.length);
+    // var bottom_sliced = bottom.slice(startString.length);
+    // var accessory_sliced = accessory.slice(startString.length);
+    // var shoes_sliced = shoes.slice(startString.length);
+    
+    
+    var url_with_info = url + '&hat=' + hat + '&top=' + top + '&bottom=' + bottom + '&accessory=' + accessory + '&shoes=' + shoes;
+    // var url_with_info = url + '?&hat=' + hat_sliced + '&top=' + top_sliced + '&bottom=' + bottom_sliced + '&accessory=' + accessory_sliced + '&shoes=' + shoes_sliced;
+    window.location.replace(url_with_info);
+   }

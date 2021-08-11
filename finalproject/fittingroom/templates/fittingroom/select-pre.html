@@ -19,7 +19,7 @@
       </script>
       <!-- make based on selected themes -->
       <div id="main-content" class="d-flex flex-row scrollmenu">
-        <div class="outfit-holder d-flex flex-column">
+        <div id="outfit-1" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
           <div class="hat">
             <img src="{% static 'images/athleisure/earthy/hat/1.png' %}">
           </div>
@@ -37,7 +37,7 @@
           </div>                 
         </div>
         
-        <div class="outfit-holder d-flex flex-column">
+        <div id="outfit-2" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
           <div class="hat">
             <img src="{% static 'images/athleisure/blue/hat/1.png' %}">
           </div>
@@ -54,7 +54,8 @@
             <img src="{% static 'images/athleisure/blue/shoes/1.png' %}">
           </div>   
         </div>
-        <div class="outfit-holder d-flex flex-column">
+
+        <div id="outfit-3" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
           <div class="hat">
             <img src="{% static 'images/streetwear/navy-blue/hat/1.png' %}">
           </div>
@@ -71,7 +72,8 @@
             <img src="{% static 'images/streetwear/navy-blue/shoes/1.png' %}">
           </div>     
         </div>  
-        <div class="outfit-holder d-flex flex-column">
+
+        <div id="outfit-4" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
           <div class="hat">
             <img src="{% static 'images/athleisure/earthy/hat/2.png' %}">
           </div>
@@ -89,24 +91,40 @@
           </div>  
         </div>  
         <!--  -->
-        <div class="outfit-holder d-flex flex-column">
-          <!-- <img class="hat" src="{% static 'images/Untitled-10.png' %}">
-          <img class="one-piece" src="{% static 'images/Untitled-2.png' %}">
-          <div class="rel">
-            <img class="wrist-piece" src="{% static 'images/Untitled-6.png' %}">
-          </div> -->
-          <!-- <img class="shoes" src="{% static 'images/Untitled-11.png' %}">   -->
-
-        </div>
-        <div class="outfit-holder d-flex flex-column">
-          <!-- <img class="hat" src="{% static 'images/Untitled-9.png' %}">
-          <img class="one-piece" src="{% static 'images/Untitled.png' %}">
-          <div class="rel">
-            <img class="wrist-piece" src="{% static 'images/Untitled-6.png' %}">
+        <div id="outfit-5" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
+          <div class="hat">
+            <img src="{% static 'images/streetwear/earthy/hat/2.png' %}">
           </div>
-          <img class="shoes" src="{% static 'images/Untitled-13.png' %}">   -->
-          
-        </div>        
+          <div class="top">
+            <img src="{% static 'images/streetwear/earthy/top/2.png' %}">
+          </div>
+          <div class="bottom">
+            <img src="{% static 'images/streetwear/earthy/bottom/2.png' %}">
+          </div> 
+          <div class="accessory">
+            <img src="{% static 'images/streetwear/earthy/accessory/2.png' %}">
+          </div> 
+          <div class="shoes">
+            <img src="{% static 'images/streetwear/earthy/shoes/2.png' %}">
+          </div>  
+        </div>
+
+        <div id="outfit-6" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
+          <div class="hat">
+            <img src="{% static 'images/streetwearearthy/hat/1.png' %}">
+          </div>
+          <div class="top">
+            <img src="{% static 'images/streetwear/earthy/top/5.png' %}">
+          </div>
+          <div class="bottom">
+            <img src="{% static 'images/streetwear/earthy/bottom/2.png' %}">
+          </div> 
+          <div class="accessory">
+            <img src="{% static 'images/streetwear/earthy/accessory/1.png' %}">
+          </div> 
+          <div class="shoes">
+            <img src="{% static 'images/streetwear/earthy/shoes/1.png' %}">
+          </div>     
       </div>
 
       <div class="container-flex">
@@ -131,6 +149,5 @@
           </div>
         </div>
       </div>
-
     </body>
 </html>
