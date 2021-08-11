@@ -16,6 +16,7 @@
 #dropdownn {
     left: 5%;
     position: absolute;
+    width: 450px;
 }
 
 .finButton {
@@ -33,7 +34,7 @@
     width: 15%;
     height: auto;
     border-radius: 30px;
-    radius: 100px;
+    /* radius: 100px; */
 
 }
 
@@ -158,31 +159,33 @@ img:not(.sp-img, #navB div div img):hover {
 
 #hatTab {
     display: none;
-    padding-top: 30px;
-    padding-left: 40px;
+    padding-top: 75px;
+    padding-left: 5px;
 }
 #topTab {
     display: none;
-    align-items: center;
-    padding-top: 30px;
-    padding-left: 40px;
+
+    padding-top: 300px;
+    padding-left: 30px;
 
 }
 #bottomTab {
     display: none;
-    align-items: center;
-    padding-top: 150px;
-    padding-left: 40px;
-    
-    
+   
+    padding-top: 10px;
+    padding-left: 30px;    
 }
+
 #shoesTab {
     display: none;
-    align-items: center;
+    padding-top: 310px;
+    padding-left: 30px;
 }
+
 #accessoryTab {
     display: none;
-    align-items: center;
+    padding-top: 45px;
+    padding-left: 30px;
 }
 
 #hatTab img {

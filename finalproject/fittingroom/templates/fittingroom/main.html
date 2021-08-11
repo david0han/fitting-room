@@ -23,6 +23,7 @@
           <div id="menu" class="cover dropdown d-flex flex-column">
             <div class="icons">
               <img src= "{% static 'images/down-arrow-brown.svg' %}" onClick="toggleStyles()">
+              <input id="button-submit" class="submit-button hidden" type="submit" value="Submit" onClick="sendSelected()">
             </div>
 
             <label id="toggleButton" class="switch">
@@ -36,7 +37,7 @@
             <div id="options" class="style-content hidden d-flex flex-row">
               <div class="checklist-holder">
                 <!-- <form action="select-pre" method="get"> -->
-                  
+                  <h3>Themes</h3>                  
                   <label class="container">
                       <p>Athleisure</p>
                       <input id="athleisure" type="checkbox">
@@ -191,7 +192,8 @@
               </div>
 
 
-              <div class="palette-holder">
+              <div class="palette-holder d-flex flex-column">
+                <h3>Colors</h3>                  
                 <div id="earthy" class="palette d-flex flex-row" onClick="selectColorPalette(this.id)"> 
                   <div id="p2-c1" class="circle"></div>
                   <div id="p2-c2" class="circle"></div>
@@ -336,7 +338,7 @@
               </div>
             </div>
             <!-- <input href="select-pre" class="submit-button" type="submit" value="Submit"> -->
-            <input class="submit-button" type="submit" value="Submit" onClick="sendSelected()">
+            
           </div>
         </div>
       </div>

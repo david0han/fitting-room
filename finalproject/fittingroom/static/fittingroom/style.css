@@ -23,6 +23,15 @@ h2 {
   z-index: -2;
 }
 
+h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  /* color: #846058; */
+  color: #995C40;
+  
+}
+
 p {
   font-family: 'Lato', sans-serif;
   font-size: 25px;
@@ -89,6 +98,7 @@ p {
 
 .icons img {
   width: 60px;
+  transform: translatey(-5px);
 }
 
 .iconss img {
@@ -128,9 +138,9 @@ W3 Schools: https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
   width: 300px; 
 }
 
-/* .palette-holder { */
-  /* width: 200px;  */
-/* } */
+.palette-holder { 
+  align-items: center;
+}
 
 /* The container */
 .container {

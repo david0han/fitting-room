@@ -1,9 +1,11 @@
 function toggleStyles() {
     var menuBox = document.getElementById("menu");
     var styleOPtions = document.getElementById("options");
+    var submit = document.getElementById("button-submit");
 
     menuBox.classList.toggle('cover');
     styleOPtions.classList.toggle('hidden');
+    submit.classList.toggle('hidden');
 }
 
 function selectColorPalette(paletteName) {
@@ -27,7 +29,7 @@ function getSelectedThemes() {
     var checklist = document.querySelector(".checklist-holder");
     var pageTitle = [];
     var j = 0;
-    for (var i = 0; i < checklist.children.length; i++) {
+    for (var i = 1; i < checklist.children.length; i++) {
         var currTheme = checklist.children[i];
         if (currTheme.children[1].checked) {
             var selectedStyleName = currTheme.children[0].innerHTML;
@@ -42,7 +44,7 @@ function getSelectedThemes() {
 function getSelectedPalette() {
     var palettes = document.querySelector(".palette-holder");
     var pagePalette = "";
-    for (var i = 0; i < palettes.children.length; i++) {
+    for (var i = 1; i < palettes.children.length; i++) {
         var currPalette = palettes.children[i];
         if (currPalette.classList.contains('palette-selected')) {
             pagePalette += currPalette.id;
