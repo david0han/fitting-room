@@ -85,7 +85,8 @@ function writingTitle() {
     var h3 = document.createElement("h3");
     var text = document.createTextNode(titleString)
 
-    div.appendChild(h3);
+    // div.appendChild(h3);
+    div.insertBefore(h3, div.childNodes[1]);
     // h3.appendChild(title);
     h3.appendChild(text);
 

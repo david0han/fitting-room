@@ -93,7 +93,7 @@
     left: 40%;
 }
 
-img:not(.sp-img, #pieceTab div img, #navB div div img) {
+img:not(.sp-img, #pieceTab div img, #navB div div img, #infobutt) {
     border-color: #D4C7BE;
     border-width: 4px;
     border-radius: 6px;

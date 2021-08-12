@@ -7,8 +7,8 @@
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/select-custom.css' %}" />
 
-	    <script src="{% static '/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
-	    <script src="{% static '/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+	    <!-- <script src="{% static '/vendors/jquery/jquery-3.3.1.min.js' %}"></script> -->
+	    <!-- <script src="{% static '/vendors/jquery-ui/jquery-ui.min.js' %}"></script> -->
 
 
       <!-- Roboto Font -->
@@ -19,6 +19,9 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+
+      <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
 
       <!-- Warning before leaving -->
       <script type = "text/javascript">
@@ -41,6 +44,41 @@
     
 
       </script>
+
+      <style>
+        h2 {
+          display: inline-block;
+          /* display: flex; */
+          justify-content: center;
+          /* padding-top: 30px; */
+          /* margin-bottom: -20px; */
+        }
+        #infobutt {
+          /* padding-left: 10px; */
+          margin-left: 10px;
+          /* margin-bottom: 20px; */
+          display: inline-block;
+          /* position: relative; */
+          width: 30px;
+        }
+        #infobox {
+          display: inline-block;
+          background-color: #B49E98;
+          border: 5px solid #846058;
+          border-radius: 10px;
+          box-shadow: 3px 3px 3px 3px #535446;
+          text-align: center;
+          position: absolute;
+          margin-left: 570px;
+          width: 600px;
+          z-index: 101;
+          padding: 7px;
+        }
+        #make-beeg {
+          width: 600px;
+        }
+      </style>
+
     </head>
 
 
@@ -48,7 +86,24 @@
       <div id="main-content" class="d-flex flex-column">
         <div id='dropdownn'>
         <div id="drop-flex" class="d-flex flex-column">
-          <h2>Choose more pieces</h2>
+          <div id="make-beeg" class="d-flex flex-row">
+            <h2>Choose more pieces</h2>
+          <!-- <h2>silly</h2> -->
+            <!-- <span> -->
+              <img id="infobutt" src= "{% static 'images/i.svg' %}">
+              <div id="infobox">
+                <p>
+                  1. Click on the arrow in the dropdown menu to show available clothing pieces. 
+                  <br>2. Check the boxes for your desired items. 
+                  <br>3. Click on any piece that you would like to replace. A right side panel will appear with more options you can scroll through.
+                  <br>4. Click the Finish button once you are done designing your outfit composed of sustainably sourced clothing pieces.
+
+                </p>
+              </div>
+            <!-- </span> -->
+          </div>
+          
+          <!-- <h2>silly</h2> -->
           <div id="menu" class="cover dropdownn d-flex flex-column">
             <div class="iconss">
               <img class="sp-img" src= "{% static 'images/down-arrow-brown.svg' %}" onClick="toggleStyles()">
@@ -166,7 +221,7 @@
         </div>
       </div>
 
-      <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
+      
       <script language = "javascript">
         function hatClicked() {
           var headItem = document.getElementById("hatImg");
@@ -444,7 +499,17 @@
         //   }
         //   }
         // }
+
+        
+        $("#infobox").toggle();
+        $( "#infobutt" ).hover(function() {
+          console.log("BUTT");
+          $("#infobox").toggle();
+        });
+    
       </script>
     </body>
+
+    
     
 </html>

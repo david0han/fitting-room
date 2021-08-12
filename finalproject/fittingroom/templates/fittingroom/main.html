@@ -7,6 +7,33 @@
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/main-dropdown-style.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/curtain-animation.css' %}" />
+      <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
+      <style>
+        h2 {
+          display: inline-block;
+        }
+        #infobutt {
+          /* padding-left: 10px; */
+          margin-left: 10px;
+          margin-bottom: 20px;
+          display: inline-block;
+          width: 30px;
+        }
+        #infobox {
+          display: inline-block;
+          background-color: #B49E98;
+          border: 5px solid #846058;
+          border-radius: 10px;
+          box-shadow: 3px 3px 3px 3px #535446;
+          text-align: center;
+          position: absolute;
+          margin-left: 30px;
+          width: 300px;
+          z-index: 101;
+          padding: 7px;
+        }
+      </style>
     </head>
 
     <body>
@@ -19,7 +46,19 @@
           <h1>Fitting Room</h1>
         </div>
         <div id="drop-flex" class="d-flex flex-column">
-          <h2>Choose your aesthetic</h2>
+          
+          <div >
+            <h2>Choose your aesthetic</h2>
+            <span>
+              <img id="infobutt" src= "{% static 'images/i.svg' %}">
+              <div id="infobox">
+                <p>
+                  After opening the dropdown, toggle to switch between making your own custom outfit or choosing a pre-made one. Select different themes and a color palette to generate clothing. Let's get dressed! 
+                </p>
+              </div>
+            </span>
+            
+          </div>
           <div id="menu" class="cover dropdown d-flex flex-column">
             <div class="icons">
               <img src= "{% static 'images/down-arrow-brown.svg' %}" onClick="toggleStyles()">
@@ -368,6 +407,14 @@
         </div>
       </div>
 
-      <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
+      
     </body>
+
+    <script>
+      $("#infobox").toggle();
+      $( "#infobutt" ).hover(function() {
+        console.log("BUTT");
+        $("#infobox").toggle("slow");
+      });
+    </script>
 </html>

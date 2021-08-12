@@ -104,6 +104,33 @@
           width: 237px;
         }
 
+        #infobutt {
+          /* padding-left: 10px; */
+          margin-top: 10px;
+          margin-left: 10px;
+          margin-bottom: 20px;
+          display: inline-block;
+          width: 30px;
+        }
+        #infobox {
+          display: inline-block;
+          background-color: #B49E98;
+          border: 5px solid #846058;
+          border-radius: 10px;
+          box-shadow: 3px 3px 3px 3px #535446;
+          text-align: center;
+          position: absolute;
+          /* margin-right: 300px; */
+          right: 300px;
+          width: 400px;
+          z-index: 101;
+          padding: 7px;
+        }
+
+        h3 {
+          padding-top: 30px;
+        }
+
       </style>
     </head>
 
@@ -138,6 +165,12 @@
 
         <div id = "chatbutt">
           Chat
+          <img id="infobutt" src= "{% static 'images/i.svg' %}">
+              <div id="infobox">
+                <p>
+                  Welcome to the virtual fitting room - where you may share your outfit with your friends and chat in real time to coordinate outfits together! Share the URL to invite your friends to the virtual fitting room. Toggle the chat in the top right corner to open and close the chat box.
+                </p>
+              </div>
         </div>
         <div id = "chatbox">
           <div id = "user">
@@ -326,7 +359,7 @@
         }
         
     });
-
+    $( "#chatbox" ).toggle();
     $( "#chatbutt" ).click(function() {
       $( "#chatbox" ).toggle( "slow", function() {
         // Animation complete.
@@ -401,5 +434,11 @@
 
       
     }
+
+    $("#infobox").toggle();
+      $( "#infobutt" ).hover(function() {
+        console.log("BUTT");
+        $("#infobox").toggle("slow");
+      });
     </script>
 </html>
