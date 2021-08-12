@@ -7,16 +7,56 @@
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/style.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'fittingroom/pre-select-styles.css' %}" />
       
+      <script type="text/javascript" src="{% static 'fittingroom/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
       <script type="text/javascript" src="{% static 'fittingroom/script.js' %}"></script>
+      <style>
+        #title-holder {
+          /* display: inline-block; */
+          display: flex;
+          justify-content: center;
+          padding-top: 30px;
+          margin-bottom: -20px;
+        }
+        #infobutt {
+          /* padding-left: 10px; */
+          margin-left: 10px;
+          /* margin-bottom: 20px; */
+          display: inline-block;
+          width: 30px;
+        }
+        #infobox {
+          display: inline-block;
+          background-color: #B49E98;
+          border: 5px solid #846058;
+          border-radius: 10px;
+          box-shadow: 3px 3px 3px 3px #535446;
+          text-align: center;
+          position: absolute;
+          margin-left: 700px;
+          width: 450px;
+          z-index: 101;
+          padding: 7px;
+        }
+      </style>
     </head>
 
     <body>
       <div id="title-holder">
-
+        <img id="infobutt" src= "{% static 'images/i.svg' %}">
+        <div id="infobox">
+          <p>
+            This is where you will select a premade outfit composed of sustainably sourced clothing pieces that fall under your chosen theme and color palette.
+            <br>
+            1. Scroll horizontally through the screen to look at all of the different outfits that fall under the theme and color palette that you chose in the previous main page
+            <br>
+            2. Click on the outfit that you like the most
+          </p>
+        </div>
       </div>
       <script type="text/javascript">
         writingTitle();
       </script>
+      
       <!-- make based on selected themes -->
       <div id="main-content" class="d-flex flex-row scrollmenu">
         <div id="outfit-1" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
@@ -150,4 +190,11 @@
         </div>
       </div>
     </body>
+    <script>
+      $("#infobox").toggle();
+      $( "#infobutt" ).hover(function() {
+        console.log("BUTT");
+        $("#infobox").toggle();
+      });
+    </script>
 </html>
