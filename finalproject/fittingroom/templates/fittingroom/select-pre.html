@@ -59,113 +59,7 @@
       
       <!-- make based on selected themes -->
       <div id="main-content" class="d-flex flex-row scrollmenu">
-        <div id="outfit-1" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
-          <div class="hat">
-            <!-- <img src="{% static 'images/athleisure/earthy/hat/1.png' %}"> -->
-          </div>
-          <div class="top">
-            <!-- <img src="{% static 'images/athleisure/earthy/top/1.png' %}"> -->
-          </div>
-          <div class="bottom">
-            <!-- <img src="{% static 'images/athleisure/earthy/bottom/1.png' %}"> -->
-          </div> 
-          <div class="accessory">
-            <!-- <img src="{% static 'images/athleisure/earthy/accessory/1.png' %}"> -->
-          </div> 
-          <div class="shoes">
-            <!-- <img src="{% static 'images/athleisure/earthy/shoes/1.png' %}"> -->
-          </div>                 
-        </div>
         
-        <div id="outfit-2" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
-          <div class="hat">
-            <!-- <img src="{% static 'images/athleisure/blue/hat/1.png' %}"> -->
-          </div>
-          <div class="top">
-            <!-- <img src="{% static 'images/athleisure/blue/top/1.png' %}"> -->
-          </div>
-          <div class="bottom">
-            <!-- <img src="{% static 'images/athleisure/blue/bottom/1.png' %}"> -->
-          </div> 
-          <div class="accessory">
-            <!-- <img src="{% static 'images/athleisure/blue/accessory/1.png' %}"> -->
-          </div> 
-          <div class="shoes">
-            <!-- <img src="{% static 'images/athleisure/blue/shoes/1.png' %}"> -->
-          </div>   
-        </div>
-
-        <div id="outfit-3" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
-          <div class="hat">
-            <!-- <img src="{% static 'images/streetwear/navy-blue/hat/1.png' %}"> -->
-          </div>
-          <div class="top">
-            <!-- <img src="{% static 'images/streetwear/navy-blue/top/5.png' %}"> -->
-          </div>
-          <div class="bottom">
-            <!-- <img src="{% static 'images/streetwear/navy-blue/bottom/2.png' %}"> -->
-          </div> 
-          <div class="accessory">
-            <!-- <img src="{% static 'images/streetwear/navy-blue/accessory/1.png' %}"> -->
-          </div> 
-          <div class="shoes">
-            <!-- <img src="{% static 'images/streetwear/navy-blue/shoes/1.png' %}"> -->
-          </div>     
-        </div>  
-
-        <div id="outfit-4" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
-          <div class="hat">
-            <!-- <img src="{% static 'images/athleisure/earthy/hat/2.png' %}"> -->
-          </div>
-          <div class="top">
-            <!-- <img src="{% static 'images/athleisure/earthy/top/2.png' %}"> -->
-          </div>
-          <div class="bottom">
-            <!-- <img src="{% static 'images/athleisure/earthy/bottom/2.png' %}"> -->
-          </div> 
-          <div class="accessory">
-            <!-- <img src="{% static 'images/athleisure/earthy/accessory/2.png' %}"> -->
-          </div> 
-          <div class="shoes">
-            <!-- <img src="{% static 'images/athleisure/earthy/shoes/2.png' %}"> -->
-          </div>  
-        </div>  
-        <!--  -->
-        <!-- <div id="outfit-5" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
-          <div class="hat">
-            <img src="{% static 'images/streetwear/earthy/hat/2.png' %}">
-          </div>
-          <div class="top">
-            <img src="{% static 'images/streetwear/earthy/top/2.png' %}">
-          </div>
-          <div class="bottom">
-            <img src="{% static 'images/streetwear/earthy/bottom/2.png' %}">
-          </div> 
-          <div class="accessory">
-            <img src="{% static 'images/streetwear/earthy/accessory/2.png' %}">
-          </div> 
-          <div class="shoes">
-            <img src="{% static 'images/streetwear/earthy/shoes/2.png' %}">
-          </div>  
-        </div> -->
-
-        <!-- <div id="outfit-6" class="outfit-holder d-flex flex-column" onClick="preSelectClothesSrc(this.id)">
-          <div class="hat">
-            <img src="{% static 'images/streetwearearthy/hat/1.png' %}">
-          </div>
-          <div class="top">
-            <img src="{% static 'images/streetwear/earthy/top/5.png' %}">
-          </div>
-          <div class="bottom">
-            <img src="{% static 'images/streetwear/earthy/bottom/2.png' %}">
-          </div> 
-          <div class="accessory">
-            <img src="{% static 'images/streetwear/earthy/accessory/1.png' %}">
-          </div> 
-          <div class="shoes">
-            <img src="{% static 'images/streetwear/earthy/shoes/1.png' %}">
-          </div> 
-        </div>     -->
       </div>
 
       <div class="container-flex">
@@ -200,48 +94,65 @@
 
 
 
-      function preMadeFill() {
-    var themesAndcolor = new URLSearchParams(window.location.href);
-    var themes = themesAndcolor.getAll('themes');
-    var color = themesAndcolor.get('colors');
-    var types = ['hat', 'top', 'bottom', 'accessory', 'shoes'];
-    var path;
+    function preMadeFill() {
+      var themesAndcolor = new URLSearchParams(window.location.href);
+      var themes = themesAndcolor.getAll('themes');
+      var color = themesAndcolor.get('colors');
+      var types = ['hat', 'top', 'bottom', 'accessory', 'shoes'];
+      var path;
+      var tab = document.getElementById('main-content');
 
-    for (var i = 0; i < themes.length; i++) {
-      
-      for (var j = 0; j < 5; j++) {
-          
-          for (var k = 1; k < 5; k++) {
-            // console.log('3rd loop')
-            // try {
-              path = "/static/images" + "/" + themes[i] + "/" + color + "/" + types[j] + "/" + String(k) + ".png";
-              
-            
-              // console.log(file.exists());
-              // var f = new File([""], path);
-
-              var tab = document.getElementById("outfit-" + k).children[j];
-              var imgElement = document.createElement('img');
-
-              imgElement.src = path;
-
-              var id = types[j] + String(k);
-              imgElement.id = id;
-
-              var func = types[j]+ "InTabClicked(this.id)"
-              imgElement.setAttribute("onclick", func);                   
-              
-              tab.appendChild(imgElement);
-
-              
-          }
+      for (var i = 0; i < themes.length; i++) {
         
+        for (var j = 1; j < 5; j++) {
+          
+          var outfitDiv = document.createElement('div');
 
+          var divId = "outfit-" + themes[i] + "-" + j;
+          outfitDiv.id = divId;
 
-     
+          outfitDiv.classList.toggle('outfit-holder');
+          outfitDiv.classList.toggle('d-flex');
+          outfitDiv.classList.toggle('flex-column');
+
+          outfitDiv.setAttribute("onclick", "preSelectClothesSrc(this.id)");   
+            
+            for (var k = 0; k < 5; k++) {
+              // console.log('3rd loop')
+              // try {
+                path = "/static/images" + "/" + themes[i] + "/" + color + "/" + types[k] + "/" + String(j) + ".png";
+                
+              
+                // console.log(file.exists());
+                // var f = new File([""], path);
+
+                // var tab = document.getElementById('main-content').children[j];
+                
+                var itemDiv = document.createElement('div');
+                itemDiv.classList.toggle(types[k]);
+
+                var imgElement = document.createElement('img');
+
+                imgElement.src = path;
+
+                var id = types[k] + String(k);
+                imgElement.id = id;
+
+                var func = types[k]+ "InTabClicked(this.id)"
+                imgElement.setAttribute("onclick", func);                   
+                
+                itemDiv.appendChild(imgElement);
+                outfitDiv.appendChild(itemDiv);
+
+                
+            }
+          
+
+            tab.appendChild(outfitDiv);
+      
+        }
       }
     }
-  }
 
       preMadeFill();
     </script>
