@@ -16,7 +16,10 @@
 
 #main-content {
     overflow: auto;
-    padding-left: 5px;
+    
+    /* padding-left: 5px; */
+    justify-content: center;
+    /* ^^ ONLY CENTER FOR NON SCROLLABLE */
 }
 
 h3 {

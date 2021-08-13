@@ -156,3 +156,6 @@ function preSelectClothesSrc(outfitDiv) {
     // var url_with_info = url + '?&hat=' + hat_sliced + '&top=' + top_sliced + '&bottom=' + bottom_sliced + '&accessory=' + accessory_sliced + '&shoes=' + shoes_sliced;
     window.location.replace(url_with_info);
    }
+
+   
+  
